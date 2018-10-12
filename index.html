@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hangman</title>
+    <style>
+
+      .heading {
+        text-align: center;
+      }
+
+      .word-slots {
+        height: 120px;
+
+      }
+
+      table {
+        height: 100px;
+        width: 500px;
+        text-align: center;
+      }
+
+      }
+      td {
+        text-align: center;
+      }
+
+      .lives,
+      .guesses {
+        text-align: center;
+      }
+
+      .reset {
+        padding: 20px;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body onload = "startGame();">
+
+    <div class = "heading">
+      <h1>Hangman in JAVASCRIPT</h1>
+    </div>
+
+    <div class = "word-slots">
+      <table border = "1" align = "center">
+        <tr>
+        </tr>
+      </table>
+    </div>
+
+    <div class = "lives">
+      <h4>Lives left:</h4>
+      <h3 id = "lives-counter">10</h3>
+    </div>
+
+    <div class = "guesses">
+      <h3 id = "message"></h3>
+      <button id = "A" onClick = "this.style.visibility= 'hidden';">A</button>
+      <button id = "B" onClick = "this.style.visibility= 'hidden';">B</button>
+      <button id = "C" onClick = "this.style.visibility= 'hidden';">C</button>
+      <button id = "D" onClick = "this.style.visibility= 'hidden';">D</button>
+      <button id = "E" onClick = "this.style.visibility= 'hidden';">E</button>
+      <button id = "F" onClick = "this.style.visibility= 'hidden';">F</button>
+      <button id = "G" onClick = "this.style.visibility= 'hidden';">G</button>
+      <button id = "H" onClick = "this.style.visibility= 'hidden';">H</button>
+      <button id = "I" onClick = "this.style.visibility= 'hidden';">I</button>
+      <button id = "J" onClick = "this.style.visibility= 'hidden';">J</button>
+      <button id = "K" onClick = "this.style.visibility= 'hidden';">K</button>
+      <button id = "L" onClick = "this.style.visibility= 'hidden';">L</button>
+      <button id = "M" onClick = "this.style.visibility= 'hidden';">M</button>
+      <button id = "N" onClick = "this.style.visibility= 'hidden';">N</button>
+      <button id = "O" onClick = "this.style.visibility= 'hidden';">O</button>
+      <button id = "P" onClick = "this.style.visibility= 'hidden';">P</button>
+      <button id = "Q" onClick = "this.style.visibility= 'hidden';">Q</button>
+      <button id = "R" onClick = "this.style.visibility= 'hidden';">R</button>
+      <button id = "S" onClick = "this.style.visibility= 'hidden';">S</button>
+      <button id = "T" onClick = "this.style.visibility= 'hidden';">T</button>
+      <button id = "U" onClick = "this.style.visibility= 'hidden';">U</button>
+      <button id = "V" onClick = "this.style.visibility= 'hidden';">V</button>
+      <button id = "W" onClick = "this.style.visibility= 'hidden';">W</button>
+      <button id = "X" onClick = "this.style.visibility= 'hidden';">X</button>
+      <button id = "Y" onClick = "this.style.visibility= 'hidden';">Y</button>
+      <button id = "Z" onClick = "this.style.visibility= 'hidden';">Z</button>
+    </div>
+    <div class = "reset">
+      <button id = "reset">Reset</button>
+    </div>
+
+
+    <script src = "app.js"></script>
+  </body>
+</html>
