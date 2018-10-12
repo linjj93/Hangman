@@ -1,19 +1,18 @@
-let randomWord = "JAVASCRIPT";
+let word_array = ['PYTHON', 'JAVASCRIPT', 'HTML', 'CASCADING', 'RUBY', 'TABLEAU']
 let tr = document.getElementsByTagName('tr')[0];
 let msg = document.getElementById('message');
 let wordslots = document.getElementsByTagName('td');
 let counter = document.getElementById('lives-counter');
-
+let randomWord;
 const buttons = document.getElementsByClassName('guesses')[0].getElementsByTagName('button');
 const reset = document.getElementById('reset');
 
 
 function startGame() {
-//  clearWord();
+  let random_number = Math.floor((Math.random() * 6));
+  randomWord = word_array[random_number];
   generateWord();
   setMessage();
-
-
 }
 
 function setMessage() {
@@ -73,13 +72,11 @@ for (let i = 0; i < buttons.length; i++) {
 
 
 reset.addEventListener('click', () => {
-  for (let i = 0; i < wordslots.length; i++) {
-    wordslots[i].textContent = '';
-  }
+  tr.innerHTML = ""
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.visibility = "visible";
   }
   counter.textContent = "10";
-  setMessage();
+  startGame();
 }
 )
