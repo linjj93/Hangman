@@ -6,19 +6,21 @@ let counter = document.getElementById('lives-counter');
 let randomWord;
 const buttons = document.getElementsByClassName('guesses')[0].getElementsByTagName('button');
 const reset = document.getElementById('reset');
+const textInputButton = document.getElementById('answer-checker');
+let count = parseInt(counter.textContent);
+let remainingSlots;
 
-
+//initialise game
 function startGame() {
-  let random_number = Math.floor((Math.random() * 6));
+  let random_number = Math.floor((Math.random() * word_array.length));
   randomWord = word_array[random_number];
+  counter.textContent = String(randomWord.length + Math.floor(0.75*randomWord.length));
+  remainingSlots = randomWord.length;
   generateWord();
   setMessage();
 }
 
-function setMessage() {
-  msg.textContent = "Guess a letter."
-}
-
+// generate the empty slots
 function generateWord() {
   for (let i = 0; i < randomWord.length; i++) {
     const letter_slot = document.createElement('td');
@@ -26,6 +28,12 @@ function generateWord() {
   }
 }
 
+// set message
+function setMessage() {
+  msg.textContent = "Good luck!"
+}
+
+//helper functions to check winning/losing condition
 function checkWin() {
   for (let i = 0; i < wordslots.length; i++) {
     if (wordslots[i].textContent == "") {
@@ -35,6 +43,7 @@ function checkWin() {
   return true;
 }
 
+
 function noMoreGuesses() {
   if (!checkWin() && counter.textContent == "0") {
     return true;
@@ -43,40 +52,106 @@ function noMoreGuesses() {
   }
 }
 
+//check game state
+
+
+
+
+
+//game logic for guessing letters
+//while (parseInt(counter.textContent) >= remainingSlots) {           //slots <= guesses
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', () => {
-    if (checkWin() || noMoreGuesses()) {
+    alert(String(parseInt(counter.textContent)) + " " + String(remainingSlots));
+    let count = parseInt(counter.textContent);
+    if (count < remainingSlots) {
+      msg.textContent = "Not enough lives to complete the word.";
+
+    }
+    if (checkWin() || noMoreGuesses()) {          //check if game can continue
       buttons[i].style.visibility = 'visible';
       msg.textContent = "Game is over. You may reset the game.";
       return;
     }
-    let count = parseInt(counter.textContent);
-    if (count < 1) {
-      msg.textContent = "You have run out of guesses.";
-      return;
-    } else {
-      new_count = count - 1;
-      counter.textContent = String(new_count);
-    };
+    let count = parseInt(counter.textContent);    //if game can continue, minus 1 try
+    new_count = count - 1;
+    counter.textContent = String(new_count);
     letter = buttons[i].textContent;
-    for (let j = 0; j < randomWord.length; j++) {
+    let correctGuess = 0;
+    for (let j = 0; j < randomWord.length; j++) {   //possible bug in this loop?
+
       if (letter == randomWord[j]) {
         wordslots[j].textContent = letter;
-        if (checkWin()) {
-          msg.textContent = "You won!"
-        }
+        remainingSlots -= 1;
+        correctGuess += 1;
+      }
+
+      if (checkWin()) {
+        msg.textContent = "You won!";
       }
     }
+    if (parseInt(counter.textContent) == 0) {
+      msg.textContent = "You have run out of guesses.";
+    } else if (correctGuess > 0) {
+      msg.textContent = "Correct!";
+    } else if (correctGuess == 0 && parseInt(counter.textContent) > 0) {
+      msg.textContent = "Wrong :( Try again!";
+    }
+
   })
 }
+//}
 
+
+
+
+//game logic for guessing the word directly
+textInputButton.addEventListener('click', () => {
+  if (parseInt(counter.textContent) < 2) {
+    msg.textContent = "You do not have enough lives to guess directly";
+    return;
+  }
+  let guess = textInputButton.previousElementSibling.value;
+  if (guess.toUpperCase() == randomWord) {
+    msg.textContent = "You won!";
+    for (let i = 0; i < randomWord.length; i++) {
+      wordslots[i].textContent = randomWord[i];
+    }
+  } else {
+    let count = parseInt(counter.textContent);    //if game can continue, minus 1 try
+    new_count = count - 2;
+    counter.textContent = String(new_count);
+    msg.textContent = "Good try, but nope. Try again!";
+  }
+})
+
+// reset game
 
 reset.addEventListener('click', () => {
   tr.innerHTML = ""
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.visibility = "visible";
   }
-  counter.textContent = "10";
   startGame();
 }
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// add points system
+// option to fill in the word once it is obvious enough
+// list of words already guessed.
+// show answer if the person cannot get it?
+// game over if empty slots more than guesses

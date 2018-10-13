@@ -2,51 +2,7 @@
 <html>
   <head>
     <title>Hangman</title>
-    <style>
-
-      .heading {
-        text-align: center;
-      }
-
-      .word-slots {
-        height: 120px;
-
-      }
-
-      table {
-        height: 100px;
-        width: 500px;
-        text-align: center;
-      }
-
-      }
-      td {
-        text-align: center;
-      }
-
-      .lives,
-      .guesses {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      #reset {
-        padding: 20px;
-        text-align: center;
-        width: 200px;
-      }
-
-      .reset {
-        text-align: center;
-      }
-
-      .guesses button {
-        padding: 15px;
-        width: 50px;
-      }
-
-
-    </style>
+    <link rel = "stylesheet" href = "styles.css"></link>
   </head>
   <body onload = "startGame();">
 
@@ -62,12 +18,15 @@
     </div>
 
     <div class = "lives">
-      <h4>Lives left:</h4>
-      <h3 id = "lives-counter">10</h3>
+      <h3>Lives left:</h3>
+      <h3 id = "lives-counter"></h3>
+      <h3 id = "message"></h3>
     </div>
 
+
+
     <div class = "guesses">
-      <h3 id = "message"></h3>
+      <h3>Guess a letter.</h3>
       <button id = "A" onClick = "this.style.visibility= 'hidden';">A</button>
       <button id = "B" onClick = "this.style.visibility= 'hidden';">B</button>
       <button id = "C" onClick = "this.style.visibility= 'hidden';">C</button>
@@ -95,6 +54,18 @@
       <button id = "Y" onClick = "this.style.visibility= 'hidden';">Y</button>
       <button id = "Z" onClick = "this.style.visibility= 'hidden';">Z</button>
     </div>
+    <div class = "word-guesser">
+      <p>Or</p>
+      <h3 id="word-guesser">Guess the word directly:</h3>
+      <form>
+        <input type="text" name = "guess">
+        <button type = "button" id ="answer-checker">Check Answer</button>
+      </form>
+    </div>
+
+
+
+
     <div class = "reset">
       <button id = "reset">Reset</button>
     </div>

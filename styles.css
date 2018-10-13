@@ -1,0 +1,61 @@
+
+      .heading {
+        text-align: center;
+      }
+
+      .word-slots {
+        height: 120px;
+
+      }
+
+      table {
+        height: 100px;
+        width: 1000px;
+        text-align: center;
+        border-collapse: collapse;
+        border: solid black;
+        table-layout: fixed;
+        font-size: 80px;
+      }
+
+      }
+      td {
+        text-align: center;
+        border: solid black;
+      }
+
+      div {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #reset {
+        padding: 10px;
+        text-align: center;
+        width: 200px;
+      }
+
+      .reset {
+        text-align: center;
+      }
+
+      .guesses button {
+        padding: 15px;
+        width: 50px;
+      }
+
+      #word-guesser, form {
+        display: inline;
+      }
+
+      #word-guesser {
+        margin-right: 15px;
+      }
+
+      .lives h4, .lives h3 {
+        display: inline;
+      }
+
+      .lives #lives-counter {
+        margin-right: 100px;
+      }
