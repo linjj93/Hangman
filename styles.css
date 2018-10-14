@@ -1,4 +1,7 @@
 
+      .container {
+        font-size: 75%;
+      }
       .heading {
         text-align: center;
       }
@@ -57,10 +60,10 @@
         margin-right: 15px;
       }
 
-      .lives h4, .lives h3 {
-        display: inline;
+      #answer-checker {
+        margin-left: 15px;
       }
 
-      .lives #lives-counter {
-        margin-right: 100px;
+      .lives h3 {
+        display: inline;
       }

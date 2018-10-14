@@ -115,6 +115,10 @@ textInputButton.addEventListener('click', () => {
     return;
   }
   let guess = textInputButton.previousElementSibling.value;
+  if (guess == "") {
+    msg.textContent = "You did not key in anything!";
+    return;
+  }
   if (guess.toUpperCase() == randomWord) {
     msg.textContent = "You won!";
     for (let i = 0; i < randomWord.length; i++) {

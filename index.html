@@ -13,20 +13,20 @@
     <div class = "container mx-auto">
       <h1 class = "heading mt-3">Guess the Capital</h1>
 
-      <div class = "row mt-5 word-slots">
+      <div class = "row mt-3 word-slots">
         <table border = "1" align = "center">
           <tr>
           </tr>
         </table>
       </div>
 
-      <div class = "row">
+      <div class = "row mb-0">
 
-        <div class = "col-6 lives text-right">
+        <div class = "col-6 lives text-center">
           <h3>Lives left:</h3>
           <h3 id = "lives-counter"></h3>
         </div>
-        <div class = "col-6 text-left">
+        <div class = "col-6 text-center">
           <h3 id = "message"></h3>
         </div>
 
@@ -35,7 +35,7 @@
 
 
       <div class = "guesses">
-        <h3>Guess a letter.</h3>
+        <h5>Pick a letter.</h5>
         <button id = "A" onClick = "this.style.visibility= 'hidden';">A</button>
         <button id = "B" onClick = "this.style.visibility= 'hidden';">B</button>
         <button id = "C" onClick = "this.style.visibility= 'hidden';">C</button>
@@ -65,7 +65,7 @@
       </div>
       <div class = "word-guesser">
         <p>Or</p>
-        <h3 id="word-guesser">Guess the word directly:</h3>
+        <h5 id="word-guesser">Guess the word directly (2 lives):</h5>
         <form>
           <input type="text" name = "guess">
           <button type = "button" id ="answer-checker">Check Answer</button>
