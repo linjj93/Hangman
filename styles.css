@@ -1,6 +1,6 @@
 
       .container {
-        font-size: 75%;
+        font-size: 65%;
       }
       .heading {
         text-align: center;
@@ -39,6 +39,7 @@
         padding: 10px;
         text-align: center;
         width: 200px;
+        font-size: 130%;
       }
 
       .reset, .reveal {
@@ -46,10 +47,11 @@
         display: inline;
       }
 
-      .guesses button {
+      .letter-button {
         padding: 15px;
         width: 50px;
         border-radius: 70%;
+        font-size: 130%;
       }
 
       #word-guesser, form {
@@ -66,4 +68,10 @@
 
       .lives h3 {
         display: inline;
+      }
+
+      .words-list ul, .score ul {
+        padding-left: 0;
+        list-style-type: none;
+
       }

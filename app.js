@@ -1,11 +1,11 @@
-let word_array = ['CHINA', 'TOKYO', 'SEOUL', 'BANGKOK', 'HANOI', 'VIENTIANE', 'MANILA', 'JAKARTA', 'COLOMBO',
+let word_array = ['BEIJING', 'TOKYO', 'SEOUL', 'BANGKOK', 'HANOI', 'VIENTIANE', 'MANILA', 'JAKARTA', 'COLOMBO',
                   'ANKARA', 'MOSCOW', 'LONDON', 'PARIS', 'BERLIN', 'ROME', 'MADRID']
 let tr = document.getElementsByTagName('tr')[0];
 let msg = document.getElementById('message');
 let wordslots = document.getElementsByTagName('td');
 let counter = document.getElementById('lives-counter');
 let randomWord;
-const buttons = document.getElementsByClassName('guesses')[0].getElementsByTagName('button');
+const buttons = document.getElementsByClassName('guesses')[0].getElementsByClassName('letter-button');
 const reset = document.getElementById('reset');
 const textInputButton = document.getElementById('answer-checker');
 let count = parseInt(counter.textContent);
@@ -146,7 +146,23 @@ revealButton.addEventListener('click', () => {
 // reset game
 
 reset.addEventListener('click', () => {
-  tr.innerHTML = ""
+  tr.innerHTML = "";
+  wordPlayed = document.createElement('li');
+  wordPlayed.textContent = randomWord;
+  score = document.createElement('li');
+  if (msg.textContent == "You won!") {
+    wordPlayed.style.color = 'green';
+    score.textContent = "1";
+  } else {
+    wordPlayed.style.color = 'red';
+    wordPlayed.style.textDecoration = 'line-through';
+    score.textContent = "0";
+  }
+  wordsList = document.querySelector('.words-list ul');
+  wordsList.appendChild(wordPlayed);
+  scoreList = document.querySelector('.score ul');
+  scoreList.appendChild(score);
+  word_array.splice(word_array.indexOf(randomWord), 1);
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.visibility = "visible";
   }
@@ -169,8 +185,9 @@ reset.addEventListener('click', () => {
 
 
 // add points system
-// list of words already guessed.
+// list of words already guessed. Then remove the words from the word_array...
+// or list of words already played. Green if guessed correctly. Red and strikethru if failed
 // game over if empty slots more than guesses
-// capitals of the world
 // add timer
 // "You are a Asian/European/South American master of capitals!"
+// add a timeout feature for message (e.g 3s after "Correct", return to normal)
