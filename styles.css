@@ -5,23 +5,26 @@
 
       .word-slots {
         height: 120px;
+        font-family: 'Kalam', cursive;
 
       }
 
       table {
         height: 100px;
-        width: 1000px;
+        width: 800px;
         text-align: center;
         border-collapse: collapse;
         border: solid black;
         table-layout: fixed;
-        font-size: 80px;
+        font-size: 60px;
       }
 
       }
       td {
         text-align: center;
         border: solid black;
+        height: 100px;
+        width: 100px;
       }
 
       div {
@@ -29,19 +32,21 @@
         margin-bottom: 20px;
       }
 
-      #reset {
+      #reset, #reveal {
         padding: 10px;
         text-align: center;
         width: 200px;
       }
 
-      .reset {
+      .reset, .reveal {
         text-align: center;
+        display: inline;
       }
 
       .guesses button {
         padding: 15px;
         width: 50px;
+        border-radius: 70%;
       }
 
       #word-guesser, form {

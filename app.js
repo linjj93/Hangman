@@ -1,4 +1,5 @@
-let word_array = ['PYTHON', 'JAVASCRIPT', 'HTML', 'CASCADING', 'RUBY', 'TABLEAU']
+let word_array = ['CHINA', 'TOKYO', 'SEOUL', 'BANGKOK', 'HANOI', 'VIENTIANE', 'MANILA', 'JAKARTA', 'COLOMBO',
+                  'ANKARA', 'MOSCOW', 'LONDON', 'PARIS', 'BERLIN', 'ROME', 'MADRID']
 let tr = document.getElementsByTagName('tr')[0];
 let msg = document.getElementById('message');
 let wordslots = document.getElementsByTagName('td');
@@ -9,6 +10,7 @@ const reset = document.getElementById('reset');
 const textInputButton = document.getElementById('answer-checker');
 let count = parseInt(counter.textContent);
 let remainingSlots;
+let revealButton = document.getElementById('reveal');
 
 //initialise game
 function startGame() {
@@ -62,12 +64,6 @@ function noMoreGuesses() {
 //while (parseInt(counter.textContent) >= remainingSlots) {           //slots <= guesses
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', () => {
-    alert(String(parseInt(counter.textContent)) + " " + String(remainingSlots));
-    let count = parseInt(counter.textContent);
-    if (count < remainingSlots) {
-      msg.textContent = "Not enough lives to complete the word.";
-
-    }
     if (checkWin() || noMoreGuesses()) {          //check if game can continue
       buttons[i].style.visibility = 'visible';
       msg.textContent = "Game is over. You may reset the game.";
@@ -88,7 +84,9 @@ for (let i = 0; i < buttons.length; i++) {
 
       if (checkWin()) {
         msg.textContent = "You won!";
+        return;
       }
+
     }
     if (parseInt(counter.textContent) == 0) {
       msg.textContent = "You have run out of guesses.";
@@ -107,6 +105,11 @@ for (let i = 0; i < buttons.length; i++) {
 
 //game logic for guessing the word directly
 textInputButton.addEventListener('click', () => {
+  if (checkWin() || noMoreGuesses()) {          //check if game can continue
+    buttons[i].style.visibility = 'visible';
+    msg.textContent = "Game is over. You may reset the game.";
+    return;
+  }
   if (parseInt(counter.textContent) < 2) {
     msg.textContent = "You do not have enough lives to guess directly";
     return;
@@ -123,6 +126,17 @@ textInputButton.addEventListener('click', () => {
     counter.textContent = String(new_count);
     msg.textContent = "Good try, but nope. Try again!";
   }
+})
+
+// reveal Answer
+
+revealButton.addEventListener('click', () => {
+  if (noMoreGuesses()) {
+    for (let i = 0; i < randomWord.length; i++) {
+      wordslots[i].textContent = randomWord[i];
+    }
+  }
+
 })
 
 // reset game
@@ -151,7 +165,8 @@ reset.addEventListener('click', () => {
 
 
 // add points system
-// option to fill in the word once it is obvious enough
 // list of words already guessed.
-// show answer if the person cannot get it?
 // game over if empty slots more than guesses
+// capitals of the world
+// add timer
+// "You are a Asian/European/South American master of capitals!"
