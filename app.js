@@ -105,8 +105,10 @@ for (let i = 0; i < buttons.length; i++) {
 
 //game logic for guessing the word directly
 textInputButton.addEventListener('click', () => {
-  if (checkWin() || noMoreGuesses()) {          //check if game can continue
-    buttons[i].style.visibility = 'visible';
+  if (checkWin() || noMoreGuesses()) {
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].style.visibility = 'visible';
+    }          //check if game can continue
     msg.textContent = "Game is over. You may reset the game.";
     return;
   }
@@ -130,6 +132,7 @@ textInputButton.addEventListener('click', () => {
     counter.textContent = String(new_count);
     msg.textContent = "Good try, but nope. Try again!";
   }
+  textInputButton.previousElementSibling.value = "";
 })
 
 // reveal Answer
@@ -185,8 +188,6 @@ reset.addEventListener('click', () => {
 
 
 // add points system
-// list of words already guessed. Then remove the words from the word_array...
-// or list of words already played. Green if guessed correctly. Red and strikethru if failed
 // game over if empty slots more than guesses
 // add timer
 // "You are a Asian/European/South American master of capitals!"
