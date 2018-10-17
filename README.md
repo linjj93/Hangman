@@ -6,5 +6,5 @@ It will consist of:
 2) Various Projects I am working on, which include:
   - a hangman game (ongoing)
   - an expenditure tracker (planned)
-  - tic-tac-toe (followed a tutorial, going to code one by myself from scratch)
+  - tic-tac-toe (followed a tutorial, going to code one by myself from scratch, or, maybe a Connect Four instead)
   - an app to help users (individuals or in groups) decide what to eat based on their preferences 
