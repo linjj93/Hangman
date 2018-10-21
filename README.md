@@ -1,4 +1,23 @@
-Things to do:
+This will be my GitHub page.
+
+It will consist of:
+
+My Resume for applying jobs
+Various Projects I am working on, which include:
+a hangman game (ongoing)
+an expenditure tracker (planned)
+tic-tac-toe (followed a tutorial, going to code one by myself from scratch)
+an app to help users (individuals or in groups) decide what to eat based on their preferences
+
+
+
+Hangman:
+1. Use media queries
+
+
+
+
+Expenditure Tracker:
 
 1. Improve styling
   - **implemented** CSS Grid
