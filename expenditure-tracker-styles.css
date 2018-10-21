@@ -7,6 +7,7 @@ body {
 }
 
 .wrapper {
+  margin-top: 70px;
   display: grid;
   background-color: #ffeead;
   color: #ffeead;
@@ -46,21 +47,20 @@ body {
 
 .income-box button {
   background-color: #ffeead;
-  height: 100%;
+  height: 40px;
 }
 
 .income-box button p {
   margin: 1%;
   font-family: 'Mali', cursive;
 
+
 }
 
 .income-box span input {
-  height: 25px;
+  height: 15px;
 }
-.expenses-table {
 
-}
 
 .categories {
   width: 100%;
@@ -220,7 +220,7 @@ label {
   font-size: 80%;
 }
 
-.table {
+.expenses-list {
   width: 100%;
   background-color: #566573;
   color: #ff6f69;
@@ -229,20 +229,20 @@ label {
 
 
 
-.table tbody tr {
+.expenses-list tbody tr {
   height: 50px;
   font-size: 120%;
   color: white;
 }
 
-.table tbody tr td input {
+.expenses-list tbody tr td input {
   height: 40px;
   font-family: 'Mali', cursive;
   color: black;
   font-size: 80%;
 }
 
-.table tbody tr td #category-edit {
+.expenses-list tbody tr td #category-edit {
   height: 40px;
   font-family: 'Mali', cursive;
   color: black;
@@ -281,6 +281,7 @@ label {
   width: 45%;
   height: 40px;
   font-family: 'Mali', cursive;
+  font-size: 0.85rem;
 }
 
 /*
