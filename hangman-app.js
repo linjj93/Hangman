@@ -153,19 +153,20 @@ reset.addEventListener('click', () => {
   tr.innerHTML = "";
   wordPlayed = document.createElement('li');
   wordPlayed.textContent = randomWord;
-  score = document.createElement('li');
+  scoreValue = document.querySelector('.score p');
   if (msg.textContent == "You won!") {
     wordPlayed.style.color = 'green';
-    score.textContent = "1";
+    wordPlayed.style.fontSize = "1.25rem";
+    newScore = parseInt(scoreValue.textContent);
+    newScore += 1;
+    scoreValue.textContent = newScore;
   } else {
     wordPlayed.style.color = 'red';
+    wordPlayed.style.fontSize = "1.25rem";
     wordPlayed.style.textDecoration = 'line-through';
-    score.textContent = "0";
   }
   wordsList = document.querySelector('.words-list ul');
   wordsList.appendChild(wordPlayed);
-  scoreList = document.querySelector('.score ul');
-  scoreList.appendChild(score);
   word_array.splice(word_array.indexOf(randomWord), 1);
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].style.visibility = "visible";
