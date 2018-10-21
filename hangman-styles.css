@@ -1,15 +1,8 @@
-      @media screen and (max-width: 600px) {
-        body {
-          width: 50%;
-          height: 50%;
-          font-size: 50%;
-        }
-      }
 
 
-
-      .container {
+     .container {
         font-size: 65%;
+        margin-top: 85px;
       }
       .heading {
         text-align: center;
@@ -19,6 +12,10 @@
         height: 120px;
         font-family: 'Kalam', cursive;
 
+      }
+
+      h1 {
+        margin-top: 70px;
       }
 
       table {
@@ -39,7 +36,7 @@
         width: 100px;
       }
 
-      div {
+      .container div {
         text-align: center;
         margin-bottom: 20px;
       }
