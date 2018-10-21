@@ -5,7 +5,7 @@ let msg = document.getElementById('message');
 let wordslots = document.getElementsByTagName('td');
 let counter = document.getElementById('lives-counter');
 let randomWord;
-const buttons = document.getElementsByClassName('guesses')[0].getElementsByClassName('letter-button');
+const buttons = document.getElementsByClassName('letter-button');
 const reset = document.getElementById('reset');
 const textInputButton = document.getElementById('answer-checker');
 let count = parseInt(counter.textContent);
