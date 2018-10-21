@@ -1,194 +1,276 @@
-let word_array = ['BEIJING', 'TOKYO', 'SEOUL', 'BANGKOK', 'HANOI', 'VIENTIANE', 'MANILA', 'JAKARTA', 'COLOMBO',
-                  'ANKARA', 'MOSCOW', 'LONDON', 'PARIS', 'BERLIN', 'ROME', 'MADRID']
-let tr = document.getElementsByTagName('tr')[0];
-let msg = document.getElementById('message');
-let wordslots = document.getElementsByTagName('td');
-let counter = document.getElementById('lives-counter');
-let randomWord;
-const buttons = document.getElementsByClassName('guesses')[0].getElementsByClassName('letter-button');
-const reset = document.getElementById('reset');
-const textInputButton = document.getElementById('answer-checker');
-let count = parseInt(counter.textContent);
-let remainingSlots;
-let revealButton = document.getElementById('reveal');
-
-//initialise game
-function startGame() {
-  let random_number = Math.floor((Math.random() * word_array.length));
-  randomWord = word_array[random_number];
-  counter.textContent = String(randomWord.length + Math.floor(0.75*randomWord.length));
-  remainingSlots = randomWord.length;
-  generateWord();
-  setMessage();
-}
-
-// generate the empty slots
-function generateWord() {
-  for (let i = 0; i < randomWord.length; i++) {
-    const letter_slot = document.createElement('td');
-    tr.appendChild(letter_slot);
-  }
-}
-
-// set message
-function setMessage() {
-  msg.textContent = "Good luck!"
-}
-
-//helper functions to check winning/losing condition
-function checkWin() {
-  for (let i = 0; i < wordslots.length; i++) {
-    if (wordslots[i].textContent == "") {
-      return false;
-    }
-  }
-  return true;
-}
+const editIncomeButton = document.querySelector('.income-box button');
+const submitButton = document.getElementById('submit');
+const date = document.getElementById('date');
+const itemInfo = document.getElementById('item');
+const amountSpent = document.getElementById('amount');
+const typeOfExpense = document.getElementById('expense-type');
+const categoryTitles = document.querySelectorAll('.categories th');
+const tableBody = document.getElementsByClassName('table')[0].getElementsByTagName('tbody')[0];
+let totalSpend = parseFloat(categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent.slice(2));
+let itemCounter = 1;
+let savingsAmount = document.getElementById('savings-amount');
+let incomeAmount = document.getElementById('income');
 
 
-function noMoreGuesses() {
-  if (!checkWin() && counter.textContent == "0") {
+
+function formNotComplete(dropdown) {
+  const dropdownChoice = document.querySelector(dropdown);
+  if (dropdownChoice[0].selected) {
     return true;
   } else {
     return false;
   }
 }
 
-//check game state
+function notNumber(arg) {
+  return isNaN(parseFloat(arg));
+}
+
+function emptyInput(input) {
+  return (input == "");
+}
 
 
 
 
 
-//game logic for guessing letters
-//while (parseInt(counter.textContent) >= remainingSlots) {           //slots <= guesses
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', () => {
-    if (checkWin() || noMoreGuesses()) {          //check if game can continue
-      buttons[i].style.visibility = 'visible';
-      msg.textContent = "Game is over. You may reset the game.";
-      return;
+
+submitButton.addEventListener('click', () => {
+  if (emptyInput(itemInfo.value)) {
+    alert("You did not describe your item.");
+    return;
+  }
+
+  if (formNotComplete('#expense-type')) {
+    alert("You have not chosen the type of expense.");
+    return;
+  }
+
+  if (notNumber(amountSpent.value)) {
+    alert("Invalid amount entered.");
+    amountSpent.value = "";
+    return;
+  }
+
+  const tr = document.createElement('tr');
+  const th = document.createElement('th');
+  const tdType = document.createElement('td');
+  const tdItem = document.createElement('td');
+  const tdAmount = document.createElement('td');
+  const tdButtons = document.createElement('td');
+  const tdEditButton = document.createElement('button');
+  tdEditButton.textContent = "edit";
+  const tdDeleteButton = document.createElement('button');
+  tdDeleteButton.textContent = "delete";
+
+  //row number
+  th.textContent = itemCounter;
+  th.className = "number-col";
+
+  //expense type
+  for (let i = 1; i < typeOfExpense.children.length; i++) {
+    if (typeOfExpense.children[i].selected) {
+      tdType.textContent = typeOfExpense.children[i].textContent;
     }
-    let count = parseInt(counter.textContent);    //if game can continue, minus 1 try
-    new_count = count - 1;
-    counter.textContent = String(new_count);
-    letter = buttons[i].textContent;
-    let correctGuess = 0;
-    for (let j = 0; j < randomWord.length; j++) {   //possible bug in this loop?
+  }
+  tdType.className = "type-col";
 
-      if (letter == randomWord[j]) {
-        wordslots[j].textContent = letter;
-        remainingSlots -= 1;
-        correctGuess += 1;
+  //item description
+  tdItem.textContent = itemInfo.value;
+  tdItem.className = "item-col";
+
+  //amount spent
+  tdAmount.innerHTML = "$ " + "<span>" + parseFloat(amountSpent.value).toFixed(2) + "</span";
+  tdAmount.className = "amount-col";
+
+  //buttons
+  tdEditButton.className = "edit-button";
+  tdDeleteButton.className = "delete-button";
+  tdButtons.appendChild(tdEditButton);
+  tdButtons.appendChild(tdDeleteButton);
+  tdButtons.className = "change-col";
+
+
+
+  tr.className = "row";
+  tr.appendChild(th);
+  tr.appendChild(tdItem);
+  tr.appendChild(tdType);
+  tr.appendChild(tdAmount);
+  tr.appendChild(tdButtons);
+  tableBody.appendChild(tr);
+
+
+  for (let i = 1; i < typeOfExpense.children.length; i++) {
+    if (typeOfExpense.children[i].selected) {
+      for (let j = 0; j < categoryTitles.length; j++) {
+        if (categoryTitles[j].firstChild.textContent == typeOfExpense.children[i].value) {
+          let cost = parseFloat(categoryTitles[j].nextElementSibling.textContent.slice(2));
+          cost += parseFloat(amountSpent.value);
+          categoryTitles[j].nextElementSibling.textContent = "$ " + String(cost.toFixed(2));
+          //let totalSpend = parseFloat(categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent.slice(2));
+          totalSpend += parseFloat(amountSpent.value);
+          categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent = "$ " + String(totalSpend.toFixed(2));
+          savingsAmount.textContent = "$ " + String((parseFloat(savingsAmount.textContent.slice(2)) - parseFloat(amountSpent.value)).toFixed(2));
+
+        }
       }
+    }
+  }
 
-      if (checkWin()) {
-        msg.textContent = "You won!";
+  itemCounter += 1;
+  itemInfo.value = "";
+  amountSpent.value = ""
+  ;
+
+})
+
+// edit or delete entries
+
+tableBody.addEventListener('click', (e) => {
+
+
+  if(e.target.className == "delete-button") {
+    if (confirm("Are you sure you want to delete?")) {
+      const parentRow = e.target.parentNode.parentNode;
+      const parentRowCategory = parentRow.firstElementChild.nextElementSibling.nextElementSibling;
+      const parentRowAmount = parseFloat(parentRowCategory.nextElementSibling.textContent.slice(2));
+      // reverse corresponding category amount
+      for (let i = 0; i < categoryTitles.length; i++) {
+        if (categoryTitles[i].textContent == parentRowCategory.textContent) {
+          let categoryValue = parseFloat(categoryTitles[i].nextElementSibling.textContent.slice(2));
+          categoryValue -= parentRowAmount;
+          categoryTitles[i].nextElementSibling.textContent = "$ " + String(categoryValue.toFixed(2));
+          savingsAmount.textContent = "$ " + String((parseFloat(savingsAmount.textContent.slice(2)) + parseFloat(parentRowAmount)).toFixed(2));
+          //let totalSpend = parseFloat(categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent.slice(2));
+          totalSpend -= parseFloat(parentRowAmount);
+          categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent = "$ " + String(totalSpend.toFixed(2));
+        }
+      }
+      //shift all other elements by -1, if there exists more rows after the chosen row
+      if (parentRow.nextElementSibling != null) {
+        let nextRow = parentRow.nextElementSibling;
+        let startingIndex = parseInt(nextRow.firstElementChild.textContent) - 1;
+        while (startingIndex <= tableBody.children.length - 1) {
+          nextRow.firstElementChild.textContent = startingIndex;
+          nextRow = nextRow.nextElementSibling;
+          startingIndex += 1;
+        }
+      } //remove the row entirely
+      tableBody.removeChild(parentRow);
+      itemCounter -= 1;
+    }
+    // else if clicked edit button
+  } else if (e.target.className == "edit-button") {
+
+    const parentRow = e.target.parentNode.parentNode;
+    const itemCell = parentRow.children[1];
+    const categoryCell = parentRow.children[2];
+    const oldCategory = categoryCell.textContent;
+    const amountCell = parentRow.children[3].firstElementChild;
+    const oldAmount = parseFloat(amountCell.textContent);
+
+
+    // edit state, reverse the entry.
+    if (e.target.textContent == "edit") {
+      itemCell.innerHTML = "<input type = 'text' id = 'item-edit' size = '15' value = " + itemCell.innerHTML + " autofocus/>";
+      amountCell.innerHTML = "<input type = 'text' id = 'amount-edit' size = '5' value = " + amountCell.innerHTML + " autofocus/>";
+      e.target.textContent = "update";
+      categoryCell.innerHTML = "<div class = 'expense-type'><select id = 'category-edit'><option selected disabled>Choose one</option><option value='F&B'>F&B</option><option value='Shopping'>Shopping</option><option value='Transport'>Transport</option><option value='Others'>Others</option></select></div>"
+      for (let i = 0; i < categoryTitles.length; i++) {
+        if (categoryTitles[i].textContent == oldCategory) {
+          let previousValue = parseFloat(categoryTitles[i].nextElementSibling.textContent.slice(2));
+          previousValue -= oldAmount;
+          categoryTitles[i].nextElementSibling.textContent = "$ " + String(previousValue.toFixed(2));
+        }
+      }
+      savingsAmount.textContent = "$ " + String((parseFloat(savingsAmount.textContent.slice(2)) + parseFloat(oldAmount)).toFixed(2));
+      totalSpend -= parseFloat(oldAmount);
+      categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent = "$ " + String(totalSpend.toFixed(2));
+
+    // update state, add new entry.
+    } else if (e.target.textContent == "update") {
+      const itemEdit = document.getElementById('item-edit');
+      const amountEdit = document.getElementById('amount-edit');
+      const categoryEdit = document.getElementById('category-edit');
+      if (formNotComplete('#category-edit')) {
+        alert("You have not chosen the type of expense.");
         return;
       }
+      if (emptyInput(itemEdit.value)) {
+        alert("You did not describe your item.");
+        return;
+      }
+      if (notNumber(amountEdit.value)) {
+        alert("Invalid amount entered.");
+        amountEdit.value = "";
+        return;
+      }
+      for (let i = 1; i < categoryEdit.children.length; i++) {
+        if (categoryEdit.children[i].selected) {
+          for (let j = 0; j < categoryTitles.length; j++) {
+            if (categoryTitles[j].textContent == categoryEdit.children[i].value) {
+              let previousValue = parseFloat(categoryTitles[j].nextElementSibling.textContent.slice(2));
+              previousValue += parseFloat(amountEdit.value);
+              categoryTitles[j].nextElementSibling.textContent = "$ " + String(previousValue.toFixed(2));
+              //let totalSpend = parseFloat(categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent.slice(2));
+              totalSpend += parseFloat(amountEdit.value);
+              categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent = "$ " + String(totalSpend.toFixed(2));
+              savingsAmount.textContent = "$ " + String((parseFloat(savingsAmount.textContent.slice(2)) - parseFloat(amountEdit.value)).toFixed(2));
+              const parentRow = e.target.parentNode.parentNode;
+              const categoryCell = parentRow.children[2];
+              categoryCell.innerHTML = categoryEdit.children[i].value;
 
-    }
-    if (parseInt(counter.textContent) == 0) {
-      msg.textContent = "You have run out of guesses.";
-    } else if (correctGuess > 0) {
-      msg.textContent = "Correct!";
-    } else if (correctGuess == 0 && parseInt(counter.textContent) > 0) {
-      msg.textContent = "Wrong :( Try again!";
-    }
-
-  })
-}
-//}
+            }
+          }
+        }
+      }
+      itemCell.innerHTML = itemEdit.value;
+      amountCell.innerHTML = parseFloat(amountEdit.value).toFixed(2);
+      e.target.textContent = "edit";
 
 
-
-
-//game logic for guessing the word directly
-textInputButton.addEventListener('click', () => {
-  if (checkWin() || noMoreGuesses()) {
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].style.visibility = 'visible';
-    }          //check if game can continue
-    msg.textContent = "Game is over. You may reset the game.";
-    return;
-  }
-  if (parseInt(counter.textContent) < 2) {
-    msg.textContent = "You do not have enough lives to guess directly";
-    return;
-  }
-  let guess = textInputButton.previousElementSibling.value;
-  if (guess == "") {
-    msg.textContent = "You did not key in anything!";
-    return;
-  }
-  if (guess.toUpperCase() == randomWord) {
-    msg.textContent = "You won!";
-    for (let i = 0; i < randomWord.length; i++) {
-      wordslots[i].textContent = randomWord[i];
-    }
-  } else {
-    let count = parseInt(counter.textContent);    //if game can continue, minus 1 try
-    new_count = count - 2;
-    counter.textContent = String(new_count);
-    msg.textContent = "Good try, but nope. Try again!";
-  }
-  textInputButton.previousElementSibling.value = "";
-})
-
-// reveal Answer
-
-revealButton.addEventListener('click', () => {
-  if (noMoreGuesses()) {
-    for (let i = 0; i < randomWord.length; i++) {
-      wordslots[i].textContent = randomWord[i];
+      }
     }
   }
-
-})
-
-// reset game
-
-reset.addEventListener('click', () => {
-  tr.innerHTML = "";
-  wordPlayed = document.createElement('li');
-  wordPlayed.textContent = randomWord;
-  score = document.createElement('li');
-  if (msg.textContent == "You won!") {
-    wordPlayed.style.color = 'green';
-    score.textContent = "1";
-  } else {
-    wordPlayed.style.color = 'red';
-    wordPlayed.style.textDecoration = 'line-through';
-    score.textContent = "0";
-  }
-  wordsList = document.querySelector('.words-list ul');
-  wordsList.appendChild(wordPlayed);
-  scoreList = document.querySelector('.score ul');
-  scoreList.appendChild(score);
-  word_array.splice(word_array.indexOf(randomWord), 1);
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].style.visibility = "visible";
-  }
-  startGame();
-}
 )
 
+//edit income
 
+editIncomeButton.addEventListener('click', () => {
+  const incomeText = document.getElementsByClassName('income-box')[0].firstElementChild.firstElementChild;
+  if (incomeText.tagName == "INPUT" ) {
+    const newIncome = incomeText.value;
+    let check = true;
+    while (check) {
+      if (notNumber(newIncome)) {
+        alert("Invalid income entered. Enter again");
+        incomeText.value = "";
+        return;
+      } else {
+        check = false;
+      }
+    }
+    editIncomeButton.textContent = "edit";
+    const span = document.createElement('span');
+    incomeText.parentNode.insertBefore(span, incomeText);
+    incomeText.parentNode.removeChild(incomeText);
+    span.textContent = newIncome;
+    savingsAmount.textContent = "$ " + (parseFloat(newIncome)-totalSpend).toFixed(2);  //handle expenditure in future
 
+  } else if (incomeText.tagName == "SPAN") {
+    const input = document.createElement('input');
+    input.type = "text";
+    input.size = "5";
+    input.style.height = "25px";
+    incomeText.parentNode.insertBefore(input, incomeText);
+    incomeText.parentNode.removeChild(incomeText);
 
+//    incomeText.innerHTML = "<input type = 'text' size = '5'>";
+//    incomeText.style.height = "25px";
+//    incomeText.style.padding = "0";
+    editIncomeButton.style.fontFamily = "'Mali', cursive";
+    editIncomeButton.textContent = "update";
+  }
 
-
-
-
-
-
-
-
-
-
-
-// add points system
-// game over if empty slots more than guesses
-// add timer
-// "You are a Asian/European/South American master of capitals!"
-// add a timeout feature for message (e.g 3s after "Correct", return to normal)
+})

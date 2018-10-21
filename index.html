@@ -1,99 +1,89 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hangman</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "styles.css"></link>
+
+    <title></title>
   </head>
-  <body onload = "startGame();">
-    <div class = "container mx-auto">
-      <h1 class = "heading mt-3">Guess the Capital</h1>
+  <body class = "bg-light">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+      <!--<a class="navbar-brand text-white order-1" href="#">China-Korea Summer'17</a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class = "row mt-3 word-slots">
-        <table border = "1" align = "center">
-          <tr>
-          </tr>
-        </table>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Personal Projects
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="hangman.html">Hangman (Version 1.0)</a>
+              <a class="dropdown-item" href="expenditure-tracker.html">Expenditure Tracker (Version 1.0)</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white" href="reflections.html">Learning Resources</a>
+          </li>
+
+        </ul>
       </div>
-
-      <div class = "row mb-0">
-        <div class = "col-6 lives text-center">
-          <h3>Lives left:</h3>
-          <h3 id = "lives-counter"></h3>
+    </nav>
+    <!--navbar end-->
+    <h1 class = "display-1 text-center mt-5 mb-3">Hello World.</h1>
+    <div class="container mx-auto mb-5">
+      <div class="row mb-5">
+        <div class="jumbotron col-6 p-3 bg-info text-white">
+          <p class = "h3 text-center">About</p>
+          <p class = "lead text-justify">
+          <strong>Hello! I am Jinjia. I started programming in Jan 2018 during my final semester in NUS,
+          under CS1010S, a computer science introduction module using Python as the "language" of instruction.
+          Since then, I have started to self-learn other languages. In particular, I am currently tackling
+          front-end web development with HTML, CSS and JavaScript. You can find projects that I have been working
+          on from the "Personal Projects" tab. Under <a href = "learningresources.html" class = "text-dark">learning
+          resources</a>, you can see a list of materials that have helped me in my programming journey.
+        </strong></p>
         </div>
-        <div class = "col-6 text-center">
-          <h3 id = "message"></h3>
+        <div class="col-1"></div>
+        <div class="col-5 p-5 text-center">
+          <p class = "text-muted h3">Currently Fighting</p>
+          <p class = "font-italic text-primary lead">Python</p>
+          <p class = "font-italic text-primary lead">CSS (Bootstrap, Flexbox, Grid)</p>
+          <p class = "font-italic text-primary lead">HTML</p>
+          <p class = "font-italic text-primary lead">JavaScript (Vanilla)</p>
         </div>
-      </div>
+      </div><!-- end of row1 -->
 
-
-      <div class = "row">
-        <div class = "guesses col-9">
-          <h5>Pick a letter. (1 life)</h5>
-          <button id = "A" class = "letter-button" onClick = "this.style.visibility= 'hidden';">A</button>
-          <button id = "B" class = "letter-button" onClick = "this.style.visibility= 'hidden';">B</button>
-          <button id = "C" class = "letter-button" onClick = "this.style.visibility= 'hidden';">C</button>
-          <button id = "D" class = "letter-button" onClick = "this.style.visibility= 'hidden';">D</button>
-          <button id = "E" class = "letter-button" onClick = "this.style.visibility= 'hidden';">E</button>
-          <button id = "F" class = "letter-button" onClick = "this.style.visibility= 'hidden';">F</button>
-          <button id = "G" class = "letter-button" onClick = "this.style.visibility= 'hidden';">G</button>
-          <button id = "H" class = "letter-button" onClick = "this.style.visibility= 'hidden';">H</button>
-          <button id = "I" class = "letter-button" onClick = "this.style.visibility= 'hidden';">I</button>
-          <button id = "J" class = "letter-button" onClick = "this.style.visibility= 'hidden';">J</button>
-          <button id = "K" class = "letter-button" onClick = "this.style.visibility= 'hidden';">K</button>
-          <button id = "L" class = "letter-button" onClick = "this.style.visibility= 'hidden';">L</button>
-          <button id = "M" class = "letter-button" onClick = "this.style.visibility= 'hidden';">M</button><br><br>
-          <button id = "N" class = "letter-button" onClick = "this.style.visibility= 'hidden';">N</button>
-          <button id = "O" class = "letter-button" onClick = "this.style.visibility= 'hidden';">O</button>
-          <button id = "P" class = "letter-button" onClick = "this.style.visibility= 'hidden';">P</button>
-          <button id = "Q" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Q</button>
-          <button id = "R" class = "letter-button" onClick = "this.style.visibility= 'hidden';">R</button>
-          <button id = "S" class = "letter-button" onClick = "this.style.visibility= 'hidden';">S</button>
-          <button id = "T" class = "letter-button" onClick = "this.style.visibility= 'hidden';">T</button>
-          <button id = "U" class = "letter-button" onClick = "this.style.visibility= 'hidden';">U</button>
-          <button id = "V" class = "letter-button" onClick = "this.style.visibility= 'hidden';">V</button>
-          <button id = "W" class = "letter-button" onClick = "this.style.visibility= 'hidden';">W</button>
-          <button id = "X" class = "letter-button" onClick = "this.style.visibility= 'hidden';">X</button>
-          <button id = "Y" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Y</button>
-          <button id = "Z" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Z</button>
-          <p>Or</p>
-          <h5 id="word-guesser">Guess the word directly (2 lives):</h5>
-          <form>
-            <input type="text" name = "guess">
-            <button type = "button" id ="answer-checker">Check Answer</button>
-          </form>
-          <br>
-          <br>
-          <button id = "reset">Reset</button>
-          <button id = "reveal" class = "btn-primary">Reveal Answer</button>
-        </div>
-
-        <div class = "words-list col-2">
-          <h5><u>Words Played</u></h5>
-          <ul></ul>
-        </div>
-
-        <div class = "score col-1">
-          <h5><u>Score</u></h5>
-          <ul></ul>
-        </div>
       </div>
 
 
 
 
-      </div>
 
 
-      <script src = "app.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
