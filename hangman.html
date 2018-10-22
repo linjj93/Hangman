@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Hangman</title>
-    <link href="https://fonts.googleapis.com/css?family=Mali|Oxygen" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mali|Oxygen|Kalam|Permanent+Marker|Concert+One|Fredoka+One" rel="stylesheet">
+    <link rel = "stylesheet" href = "hangman-main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "hangman-styles.css"></link>
+
   </head>
   <body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
-      <!--<a class="navbar-brand text-white order-1" href="#">China-Korea Summer'17</a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white" href="index.html">Home</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -29,7 +28,7 @@
               Personal Projects
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="hangman.html">Hangman (Version 1.0)</a>
+              <a class="dropdown-item" href="hangman.html">Hangman (Version 2.0)<span class="sr-only">(current)</span></a>
               <a class="dropdown-item" href="expenditure-tracker.html">Expenditure Tracker (Version 1.0)</a>
             </div>
           </li>
@@ -39,15 +38,18 @@
     <!--navbar end-->
 
     <div class = "wrapper">
+      <div class = "heading"><h1>Guess the Capital!</h1></div>
       <div class = "status">
         <div class = "lives">
           <h3>Lives left: <span id = "lives-counter"></span></h3>
         </div>
-        <div>
+        <div class = "message">
           <h3 id = "message">message placeholder</h3>
         </div>
         <div class = "reset-reveal">
-          <button id = "reset">Reset</button><br>
+          <button id = "reset">Reset</button>
+        </div>
+        <div class = "reset-reveal">
           <button id = "reveal">Reveal Answer</button>
         </div>
       </div>
@@ -62,33 +64,37 @@
       </div>
 
       <div class = "guesses">
-        <h5>Pick a letter. (1 life)</h5>
-        <button id = "A" class = "letter-button" onClick = "this.style.visibility= 'hidden';">A</button>
-        <button id = "B" class = "letter-button" onClick = "this.style.visibility= 'hidden';">B</button>
-        <button id = "C" class = "letter-button" onClick = "this.style.visibility= 'hidden';">C</button>
-        <button id = "D" class = "letter-button" onClick = "this.style.visibility= 'hidden';">D</button>
-        <button id = "E" class = "letter-button" onClick = "this.style.visibility= 'hidden';">E</button>
-        <button id = "F" class = "letter-button" onClick = "this.style.visibility= 'hidden';">F</button>
-        <button id = "G" class = "letter-button" onClick = "this.style.visibility= 'hidden';">G</button>
-        <button id = "H" class = "letter-button" onClick = "this.style.visibility= 'hidden';">H</button>
-        <button id = "I" class = "letter-button" onClick = "this.style.visibility= 'hidden';">I</button>
-        <button id = "J" class = "letter-button" onClick = "this.style.visibility= 'hidden';">J</button>
-        <button id = "K" class = "letter-button" onClick = "this.style.visibility= 'hidden';">K</button>
-        <button id = "L" class = "letter-button" onClick = "this.style.visibility= 'hidden';">L</button>
-        <button id = "M" class = "letter-button" onClick = "this.style.visibility= 'hidden';">M</button><br><br>
-        <button id = "N" class = "letter-button" onClick = "this.style.visibility= 'hidden';">N</button>
-        <button id = "O" class = "letter-button" onClick = "this.style.visibility= 'hidden';">O</button>
-        <button id = "P" class = "letter-button" onClick = "this.style.visibility= 'hidden';">P</button>
-        <button id = "Q" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Q</button>
-        <button id = "R" class = "letter-button" onClick = "this.style.visibility= 'hidden';">R</button>
-        <button id = "S" class = "letter-button" onClick = "this.style.visibility= 'hidden';">S</button>
-        <button id = "T" class = "letter-button" onClick = "this.style.visibility= 'hidden';">T</button>
-        <button id = "U" class = "letter-button" onClick = "this.style.visibility= 'hidden';">U</button>
-        <button id = "V" class = "letter-button" onClick = "this.style.visibility= 'hidden';">V</button>
-        <button id = "W" class = "letter-button" onClick = "this.style.visibility= 'hidden';">W</button>
-        <button id = "X" class = "letter-button" onClick = "this.style.visibility= 'hidden';">X</button>
-        <button id = "Y" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Y</button>
-        <button id = "Z" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Z</button>
+        <div class = "guesses1">
+          <h5>Pick a letter. (1 life)</h5>
+          <button id = "A" class = "letter-button" onClick = "this.style.visibility= 'hidden';">A</button>
+          <button id = "B" class = "letter-button" onClick = "this.style.visibility= 'hidden';">B</button>
+          <button id = "C" class = "letter-button" onClick = "this.style.visibility= 'hidden';">C</button>
+          <button id = "D" class = "letter-button" onClick = "this.style.visibility= 'hidden';">D</button>
+          <button id = "E" class = "letter-button" onClick = "this.style.visibility= 'hidden';">E</button>
+          <button id = "F" class = "letter-button" onClick = "this.style.visibility= 'hidden';">F</button>
+          <button id = "G" class = "letter-button" onClick = "this.style.visibility= 'hidden';">G</button>
+          <button id = "H" class = "letter-button" onClick = "this.style.visibility= 'hidden';">H</button>
+          <button id = "I" class = "letter-button" onClick = "this.style.visibility= 'hidden';">I</button>
+          <button id = "J" class = "letter-button" onClick = "this.style.visibility= 'hidden';">J</button>
+          <button id = "K" class = "letter-button" onClick = "this.style.visibility= 'hidden';">K</button>
+          <button id = "L" class = "letter-button" onClick = "this.style.visibility= 'hidden';">L</button>
+          <button id = "M" class = "letter-button" onClick = "this.style.visibility= 'hidden';">M</button>
+        </div>
+        <div class = "guesses2">
+          <button id = "N" class = "letter-button" onClick = "this.style.visibility= 'hidden';">N</button>
+          <button id = "O" class = "letter-button" onClick = "this.style.visibility= 'hidden';">O</button>
+          <button id = "P" class = "letter-button" onClick = "this.style.visibility= 'hidden';">P</button>
+          <button id = "Q" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Q</button>
+          <button id = "R" class = "letter-button" onClick = "this.style.visibility= 'hidden';">R</button>
+          <button id = "S" class = "letter-button" onClick = "this.style.visibility= 'hidden';">S</button>
+          <button id = "T" class = "letter-button" onClick = "this.style.visibility= 'hidden';">T</button>
+          <button id = "U" class = "letter-button" onClick = "this.style.visibility= 'hidden';">U</button>
+          <button id = "V" class = "letter-button" onClick = "this.style.visibility= 'hidden';">V</button>
+          <button id = "W" class = "letter-button" onClick = "this.style.visibility= 'hidden';">W</button>
+          <button id = "X" class = "letter-button" onClick = "this.style.visibility= 'hidden';">X</button>
+          <button id = "Y" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Y</button>
+          <button id = "Z" class = "letter-button" onClick = "this.style.visibility= 'hidden';">Z</button>
+        </div>
       </div>
 
       <div class = "word-guesser">
@@ -111,5 +117,8 @@
 
     </div>
     <script src ="hangman-app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>

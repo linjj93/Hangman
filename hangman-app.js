@@ -66,7 +66,7 @@ for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', () => {
     if (checkWin() || noMoreGuesses()) {          //check if game can continue
       buttons[i].style.visibility = 'visible';
-      msg.textContent = "Game is over. You may reset the game.";
+      msg.textContent = "Game is over. Reset the game.";
       return;
     }
     let count = parseInt(counter.textContent);    //if game can continue, minus 1 try
@@ -111,7 +111,7 @@ textInputButton.addEventListener('click', () => {
    for (let i = 0; i < buttons.length; i++) {
      buttons[i].style.visibility = 'visible';
    }          //check if game can continue
-   msg.textContent = "Game is over. You may reset the game.";
+   msg.textContent = "Game is over. Reset the game.";
    return;
  }
   if (parseInt(counter.textContent) < 2) {
@@ -155,13 +155,13 @@ reset.addEventListener('click', () => {
   wordPlayed.textContent = randomWord;
   scoreValue = document.querySelector('.score p');
   if (msg.textContent == "You won!") {
-    wordPlayed.style.color = 'green';
+    wordPlayed.style.color = '#E4E6C3';
     wordPlayed.style.fontSize = "1.25rem";
     newScore = parseInt(scoreValue.textContent);
     newScore += 1;
     scoreValue.textContent = newScore;
   } else {
-    wordPlayed.style.color = 'red';
+    wordPlayed.style.color = '#F05D23';
     wordPlayed.style.fontSize = "1.25rem";
     wordPlayed.style.textDecoration = 'line-through';
   }

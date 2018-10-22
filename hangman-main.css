@@ -1,0 +1,230 @@
+.heading {
+  font-family: 'Kalam', cursive;
+}
+
+.wrapper {
+  padding: 50px 5px;
+  display: grid;
+  background-color: #261C15;
+  font-family: 'Concert One', cursive;
+  color: #C5D86D;
+  text-align: center;
+  grid-auto-rows: minmax(50px, auto);
+  grid-template-columns: auto;
+  grid-template-areas:
+    "h h h h h h sc"
+    "s s s s s s s"
+    "ws ws ws ws ws ws ws"
+    "g g g g g g g"
+    "wg wg wg wg wg wg wg"
+    "wl wl wl wl wl wl wl"
+}
+
+.reset-reveal {
+  margin: 10px auto;
+  display: inline-block;
+}
+
+.message {
+  vertical-align: auto 0;
+}
+
+.heading {
+  grid-area: h;
+  height: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status {
+  grid-area: s;
+/*   margin: 0 auto;
+  width: 200px;
+  max-width: 200px;  */
+}
+
+.lives {
+  margin-bottom: 10px;
+
+}
+
+#message {
+  font-size: 1.5rem;
+}
+
+#reset, #reveal {
+  padding: 10px;
+  text-align: center;
+  font-size: 100%;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#reset {
+  margin-bottom: 10px;
+}
+
+
+
+.word-slots {
+  grid-area: ws;
+  font-family: 'Mali', cursive;
+  margin-bottom: 20px;
+
+}
+
+table {
+  height: 100px;
+  width: 95%;
+  text-align: center;
+  border-collapse: collapse;
+  border: solid white;
+  table-layout: fixed;
+  font-size: 60px;
+}
+
+}
+td {
+  text-align: center;
+  border: solid black;
+  height: 100px;
+  width: 100px;
+}
+
+
+.guesses {
+  grid-area: g;
+  padding: 0 auto;
+  grid-auto-rows: auto;
+
+}
+
+.guesses1, .guesses2 {
+  display: inline;
+}
+
+.letter-button {
+  padding: 15px;
+  width: 50px;
+  border-radius: 70%;
+  font-size: 110%;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#answer-checker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+button {
+  background-color: #EFD2CB;
+
+}
+
+.word-guesser {
+  margin-top: 20px;
+  grid-area: wg;
+}
+
+.words-list {
+  grid-area: wl;
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 auto;
+}
+
+
+.score {
+  grid-area: sc;
+  border: 2px double white;
+  margin: 15px;
+
+}
+
+.score p {
+  font-size: 4rem;
+}
+
+.words-list ul, .score ul {
+  padding-left: 0;
+  list-style-type: none;
+
+}
+
+.words-list h5 {
+  width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 55px 5px;
+    display: grid;
+    text-align: center;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-rows: 80px;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "s h h h h h wl wl"
+      "s ws ws ws ws ws wl wl"
+      "sc g g g g g wl wl"
+      "sc wg wg wg wg wg wl wl"
+  }
+
+  .heading {
+    font-family: 'Kalam', cursive;
+  }
+
+
+  #reset, #reveal {
+    text-align: center;
+    display: block;
+    width: 90%;
+    font-size: 100%;
+  }
+
+  .status {
+    grid-area: s;
+    width: 200px;
+    margin-top: 10px;
+  }
+
+  .message {
+    vertical-align: auto 0;
+  }
+
+  #message {
+    height: 80px;
+  }
+
+  .reset-reveal {
+    margin: 10px 10px;
+  }
+
+
+  .reset-reveal {
+    margin: 10px auto;
+    display: block;
+    width: 70%;
+  }
+
+  .guesses1, .guesses2 {
+    display: block;
+  }
+
+  .words-list {
+    margin-top: 10px;
+  }
+
+  .score {
+    height: 150px;
+  }
+
+  .word-slots {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+}
