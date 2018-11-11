@@ -9,7 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-    <link rel = "stylesheet" href = "portfolio-styles.css">
+    <!---link rel = "stylesheet" href = "portfolio-styles.css"> -->
+    <link rel = "stylesheet" href = "dynamic-portfolio.css">
     <title></title>
   </head>
   <body class = "bg-light">
@@ -30,9 +31,9 @@
               Personal Projects
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="hangman.html">Hangman (Version 2.0)</a>
-              <a class="dropdown-item" href="expenditure-tracker.html">Expenditure Tracker (Version 1.0)</a>
-              <a class="dropdown-item" href="https://linjj93.github.io/my-react-calculator/">Calculator (Version 1.0)</a>
+              <a class="dropdown-item" href="hangman.html">Hangman</a>
+              <a class="dropdown-item" href="expenditure-tracker.html">Expenditure Tracker</a>
+              <a class="dropdown-item" href="https://linjj93.github.io/my-react-calculator/">Calculator</a>
             </div>
           </li>          
 
@@ -46,7 +47,7 @@
     <!--navbar end-->
     <h1 class = "display-1 text-center mt-5 mb-3">Hello World.</h1>
     <div class = "main-wrapper">
-      <div class="container mx-auto mb-5">
+      <div class="container mx-auto mb-3">
         <div class="row mb-5">
           <div class="jumbotron col-md-7 p-3 bg-info text-white">
             <p class = "h3 text-center">About</p>
@@ -71,119 +72,162 @@
           </div>
         </div><!-- end of row1 -->
       </div>
-      <div class = "portfolio-container">
 
-        <div class = "intro">
-          <h1>JINJIA.</h1>
-          <p>Going to China twice (Hangzhou & Beijing) piqued my interest in technology and mobile applications.
-          Payment? Alipay. Messaging? Wechat. Shopping? Taobao/Tmall. Food? Eleme. Activities? Dianping/Meituan. Cycling? Mobike/Ofo.
-          I realised how intriguing it would be if I could create my own apps. And so I started to delve into programming.</p>
-          <div class = "title">
-            <img src = "images/graduation.png" align = "left">
-            <p align = "middle" id = "education-title">Education</p>
-          </div>
-          <p class = "dates">Aug'14 - Jul'18</p>
-          <p>B.Soc.Sci. (Hons., Distinction)<br>
-          Psychology<br>
-          National University of Singapore</p>
-          <p class = "dates">Feb'17 - Jun'17</p>
-          <p>Student Exchange Programme<br>
-          Peking University</p>
-        </div>
-  
-  
-  
-        <div class = "work">
-          <div class = "title">
-          <img src = "images/work.jpg" align = "left">
-          <p align = "middle">IT-related experiences</p>
+      <div class = "dynamic-portfolio">
+        
+        <div class = "content">
+
+          <div class = "desc">
+            <h3>Introduction</h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
           </div>
   
-  
-          <table>
-            <tr>
-              <th>
-                <a href = "https://www.psd.gov.sg/"><img src = "images/psd.png"></a>
-  
-  
-              </th>
-              <td>
-  
-                <ul>
-                  <li>
-                    <h3>Executive</h3>
-                  </li>
-                  <li>
-                    Data Office.
-                    Provide support for release of HR data warehouse, ODIN.
-                    Dashboard making on Tableau. Mastery of parameters, filters, calculated fields, marks.
-                  </li>
-              </td>
-            </tr>
-  
-            <tr>
-              <th>
-                <a href = "https://www.roboto.sg/"><img src = "images/roboto.png"></a>
-              </th>
-              <td>
-  
-                <ul>
-                  <li>
-                    <h3>Assistant Instructor</h3>
-                  </li>
-                  <li>
-                    Assist in teaching and guiding primary school students in learning programming principles and computational thinking skills through Dash, Scratch and Micro:bit through holiday camps and weekly classes during school term.
-                  </li>
-              </td>
-            </tr>
-  
-            <!--          <tr>
-                        <th>
-                          <img src = "images/kidsglobal.png">
+          <div class = "school">
             
-                        </th>
-                        <td>
+            <h3 align = "left" id = "education-title">Student Life</h3>
             
-                          <ul>
-                            <li>
-                              <h3>Intern (Overseas)</h3>
-                            </li>
-                            <li>
-                              Singaporean startup with bilingual preschool in Hangzhou, China. Engaged in teaching duties for preschool children. Improved English standards of local teachers. Translation work.
-                            </li>
             
-                          </ul>
-                        </td>
-                      </tr>
-            
-                      <tr>
-                        <th>
-                          <img src = "images/experiencematters.png">
-            
-                        </th>
-                        <td>
-                          <ul>
-                            <li>
-                              <h3>Intern</h3>
-                            </li>
-                            <li>
-                              Worked in team of 5. Planned a 3-day job exhibition in collaboration with Workforce Development Agency. Coordinated logistics with external vendors. Translated English brochures to Chinese to reach out to English illiterate.
-                            </li>
-                        </td>
-                      </tr>    -->
-          </table>
+            <div class = "school-desc">
+              
+              <div id = "nus">
+                <div class = "programme">
+                  <p><strong>Graduated with B.Soc.Sci. (Hons., Distinction), Psychology</strong></p> 
+                  <p>National University of Singapore</p>
+                </div>
+      
+                <div class = "dates">
+                  <p>Aug 2014 - Jul 2018</p>
+                </div>
+              </div>  
+                
+              <div id = "pku">
+                <div class = "programme">
+                  <p><strong>Student Exchange Programme in Beijing, China</strong></p>
+                  <p>Peking University</p>
+                </div>
+              
+                <div class = "dates">
+                  <p>Feb 2017 - Jun 2017</p>
+                </div>  
+              </div>
+
+              <div id = "internship">
+                <div class = "programme">
+                  <p><strong>Overseas Internship in Hangzhou, China</strong></p> 
+                  <p>KidsGlobal International</p>
+                </div>
+      
+                <div class = "dates">
+                  <p>Jun 2016 - Jul 2016</p>
+                </div>
+              </div>
+
+
+
+              <div id = "ocip">
+                <div class = "programme">
+                  <p><strong>Service Learning Trip to Champassak, Pakse, Laos</strong></p> 
+                  <p>Project EMP - Empowering Lives, Moulding the Future, Paying it Forward</p>
+                </div>
+      
+                <div class = "dates">
+                  <p>Dec 2015</p>
+                </div>
+              </div>
+                
+            </div>  
+          </div>
   
-  
+          <div class = "work">
+            
+            
+
+            <h3 align = "left">Delving into IT</h3>
+
+            
+            <div class = "work-desc"> 
+
+              <div id = "psd">
+                
+                <div class = "logo">
+                  <a href = "https://www.psd.gov.sg/"><img src = "images/psd.png"></a>
+                </div>
+
+                <div class = "desc-p"> 
+                  <p><strong>Data Office, Human Resources Management Information & Systems<br>Public Service Division</strong></p>
+                  <p>
+                  Provide support for release of HR data warehouse, ODIN. Dashboard making on Tableau. Mastery of parameters, filters, calculated fields, marks.
+                  </p>
+                </div>
+
+              </div>
+
+              <div id = "roboto">
+
+                <div class = "logo">
+                  <a href = "https://www.roboto.sg/"><img src = "images/roboto.png"></a>
+                </div>
+
+                <div class = "desc-p">
+                  <p><strong>Roboto Academy</strong></p>
+                  <p>
+                    Data Office. Provide support for release of HR data warehouse, ODIN. Dashboard making on Tableau. Mastery of parameters, filters, calculated fields, marks.                 
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+          
+          </div>
         </div>
-  
-  
-  
-        <div class = "others">
-          <p class = "title">Others</p>
+          
+        
+        <div class = "buttons">
+          
+          <div id = "desc-btn">
+            <strong>Introduction</strong>
+          </div>
+          
+          <div id = "school-btn">
+            <strong>Student Life</strong>
+          </div>
+
+          <div id = "work-btn">
+            <strong>Delving into IT</strong>
+          </div>
+
         </div>
       </div>
 
-    </div> 
+      <div class = "projects">
+        <div>Programs</div>
+        <img src = "images/hangman-ss.png">
+        <img src = "images/calculator-ss.png">
+      </div>
+      
+
+
+      <!--
+      <div class = "card-deck projects mt-5 mx-3">
+        <div class = "card col-3  bg-dark">
+          <img class = "card-img-top img-fluid" src = "images/hangman-ss.png">
+          <div class = "card-body">
+            <h5 class = "card-title">Card Title</h5>
+            <p class = "card-text">Test Card Text</p>
+          </div>
+        </div>
+
+        <div class = "card col-3">
+            <img class = "card-img-top">
+            <div class = "card-body">
+              <h5 class = "card-title">Card Title</h5>
+              <p class = "card-text">Test Card Text</p>
+            </div>
+          </div>
+      </div>
+    -->
+    </div>
 
 
 
@@ -202,5 +246,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="portfolio-app.js"></script>
   </body>
 </html>
