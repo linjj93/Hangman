@@ -10,65 +10,54 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <!---link rel = "stylesheet" href = "portfolio-styles.css"> -->
-    <link rel = "stylesheet" href = "dynamic-portfolio.css">
+    <link rel = "stylesheet" href = "index.css">
     <title></title>
   </head>
   <body class = "bg-light">
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-white" href="index.html">Home<span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Personal Projects
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="hangman.html">Hangman</a>
-              <a class="dropdown-item" href="expenditure-tracker.html">Expenditure Tracker</a>
-              <a class="dropdown-item" href="https://linjj93.github.io/my-react-calculator/">Calculator</a>
-            </div>
-          </li>          
-
-          <li class="nav-item">
-            <a class="nav-link text-white" href="learning-resources.html">Learning Resources (In Progress)</a>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
+    <div class = "sidenav">
+      <h1>Jinjia.</h1>
+      <p>My first foray into programming.</p>
+      <a class="active" href="#home">Home</a>
+      <a href="#news">About</a>
+      <a href="#news">Personal Projects</a>
+      <a href="#contact">Learning Resources</a>
+      <a href="#about">Contact</a>
+    </div>
+    
     <!--navbar end-->
-    <h1 class = "display-1 text-center mt-5 mb-3">Hello World.</h1>
+    <div class = "start">
+
+      </div>
     <div class = "main-wrapper">
+      
       <div class="container mx-auto mb-3">
-        <div class="row mb-5">
-          <div class="jumbotron col-md-7 p-3 bg-info text-white">
-            <p class = "h3 text-center">About</p>
+        <div class="row mb-3">
+          <div class="jumbotron col-md-11 ml-4 bg-info text-white p-3">
+            <p class = "h3 text-center header-font">About</p>
             <p class = "lead text-justify">
-            <strong>Hello! I am Jinjia. I started programming in Jan 2018, when I took an introductory module to
-            computer science with Python as the "language" of instruction. The initial slogging through the nights
-            learning about loops, conditional flows and object-oriented programming cultivated my interest to code
-            beyond the classroom.
-            Since then, I have started to self-learn other languages. In particular, I am currently tackling
+            I am Jinjia, aspiring to be a coder and working on my first ever coding project. My journey was kickstarted 
+            when I took a introductory class to computer science with Python as the "language" of instruction. One problem,
+            in particular, really introduced me to the highs and lows of programming. </p>
+
+           
+            <p align = "center">
+            <img src = "images/codingquestion1.png">
+            <img src = "images/codinganswer1.png">
+            </p>
+
+            <p class = "text-justify">We had just started learning about loops, iterations and recursions, and were taught that for every recursion,
+            there was a way to code the same algorithm in iteration. The algorithm for this mosaic seemed short and sweet, but the hours and 
+            fatigue I fought through to complete this was unforgettable. I remembered coding through the night, and even thinking
+            of the solution while I was trying to fall asleep! Eventually, I was still in deep thought and decided to give sleep a miss, and finally completing it at dawn. 
+            Looking back, this was one of those nights which signalled the kind of impact learning how to code was having on me. (Of course, sleeping might have been a better option. It actually helps one to code better!)
+            </p>
+
+            <p class = "text-justify">Since then, I have started to self-learn other languages. In particular, I am currently tackling
             front-end web development with HTML, CSS and JavaScript. You can find projects that I have been
-            working on from the "Personal Projects" tab. Under <a href = "learningresources.html" class = "text-dark">learning resources</a>, you can see a
+            working on from the "Personal Projects" tab. Under <a href = "learningresources.html" class = "text-white">learning resources</a>, you can see a
             list of materials that have helped me in my programming journey.
-          </strong></p>
-          </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-4 p-5 text-center">
-            <p class = "text-muted h3">In Progress</p>
-            <p class = "font-italic text-primary lead">Python</p>
-            <p class = "font-italic text-primary lead">CSS (Bootstrap, Flexbox, Grid)</p>
-            <p class = "font-italic text-primary lead">HTML</p>
-            <p class = "font-italic text-primary lead">JavaScript (Vanilla, ReactJS)</p>
+          </p>
           </div>
         </div><!-- end of row1 -->
       </div>
@@ -78,8 +67,12 @@
         <div class = "content">
 
           <div class = "desc">
-            <h3>Introduction</h3>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h3 class = "header-font">In Progress</h3>
+
+            <p class = "font-italic text-primary lead">Python</p>
+            <p class = "font-italic text-primary lead">CSS (Bootstrap, Flexbox, Grid)</p>
+            <p class = "font-italic text-primary lead">HTML</p>
+            <p class = "font-italic text-primary lead">JavaScript (Vanilla, ReactJS)</p>
           </div>
   
           <div class = "school">
@@ -186,7 +179,7 @@
         <div class = "buttons">
           
           <div id = "desc-btn">
-            <strong>Introduction</strong>
+            <strong>In Progress</strong>
           </div>
           
           <div id = "school-btn">
@@ -199,34 +192,41 @@
 
         </div>
       </div>
-
+      
       <div class = "projects">
-        <div>Programs</div>
-        <img src = "images/hangman-ss.png">
-        <img src = "images/calculator-ss.png">
+        <h2 align = "center">Projects</h2>
+        <div class = "row justify-content-center">
+
+          <div class = "image-wrapper col-6 px-auto mt-5 text-center">
+            <img src="images/hangman-ss.png"  class="hangman-img img-thumbnail">
+            <div class = "overlay overlayLeft">
+              <div class = "overlay-desc">
+                <p>A game of Hangman in Vanilla JS</p>
+                <a class = "view-work button" href = "hangman.html">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class = "image-wrapper col-6 px-auto mt-5 text-center">
+            <img src="images/calculator-ss.png"  class="calculator-img img-thumbnail">
+            <div class = "overlay overlayLeft">
+              <div class = "overlay-desc">
+                <p>A calculator with ReactJS</p>
+                <a class = "view-work button" href = "https://linjj93.github.io/my-react-calculator/"">View</a>
+              </div>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
       </div>
+
       
 
 
-      <!--
-      <div class = "card-deck projects mt-5 mx-3">
-        <div class = "card col-3  bg-dark">
-          <img class = "card-img-top img-fluid" src = "images/hangman-ss.png">
-          <div class = "card-body">
-            <h5 class = "card-title">Card Title</h5>
-            <p class = "card-text">Test Card Text</p>
-          </div>
-        </div>
-
-        <div class = "card col-3">
-            <img class = "card-img-top">
-            <div class = "card-body">
-              <h5 class = "card-title">Card Title</h5>
-              <p class = "card-text">Test Card Text</p>
-            </div>
-          </div>
-      </div>
-    -->
+      
     </div>
 
 
