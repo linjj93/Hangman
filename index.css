@@ -67,7 +67,7 @@ h1 {
     background-image: url("images/jeju-original.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 480px;
+    height: 525px;
     margin-bottom: 50px;
 
 }
@@ -82,12 +82,14 @@ h1 {
     font-family: inherit;
     padding-top: 40px;
     padding-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .content {
     flex: 3;
     padding-left: 45px;
     display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -109,27 +111,28 @@ h1 {
     justify-content: stretch;
     align-self: center;
     width: 700px;
+    flex-wrap: wrap;
 }
 
 #nus, #pku, #ocip, #internship {
     display: flex;
     flex-basis: 100px;   
     justify-content: stretch;
+    flex-wrap: wrap;
 }
 
 .programme {
     flex: 3;
     align-self: center;
-    text-align: justify;
 }
 
 .programme p {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .dates {
     flex: 1;
-    order: -1;
     align-self: center;
     text-align: center; 
 }
@@ -146,6 +149,7 @@ h1 {
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
+    flex-wrap: wrap;
     
 }
 
@@ -155,6 +159,7 @@ h1 {
     display: flex;
     flex-basis: 200px;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -181,6 +186,7 @@ h1 {
     font-style: inherit;
     justify-content: space-between;
     align-items: space-between;
+    flex-wrap: wrap;
 }
 
 #desc-btn, #school-btn, #work-btn {
@@ -256,6 +262,7 @@ h1 {
     transition: 0.7s ease;
     opacity: 0;
     font-size: 2.5rem;
+    flex-wrap: wrap;
     
 }
 
@@ -284,6 +291,167 @@ h1 {
 
 .overlay-desc a:hover {
     -webkit-transform: translateX(8px);
-  transform: translateX(8px);
+    transform: translateX(8px);
 }
 
+
+@media only screen and (max-width: 768px) {
+    .sidenav {
+        background-color: #333;
+        height: 100px;
+        width: 100%;
+        
+        z-index: 1;
+        top: 0;
+        color: white;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .sidenav a {
+        display: inline;
+        color: #f2f2f2;
+        padding: 15px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        border-bottom: 5px solid #225fc1;
+        margin: 0 5px;
+    }
+
+    .sidenav h1, .sidenav p {
+        display: none;
+    }
+
+    .main-wrapper {
+        margin-left: 0;
+        width: 600px;
+    }
+
+    .jumbotron {
+        width: 400px;
+    }
+
+    .python {
+        height: 30%;
+        width: 30%;
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    .school, .work, .desc, .school-desc, .work-desc, #nus, #pku, #ocip, #internship, #psd, #roboto, .projects {
+        display: inline-block;
+        text-align: center;
+        font-size: 1rem;
+        width: 400px;
+    }
+
+    .school, .work, .desc {
+        margin-bottom: 20px;
+
+    }
+
+    h3 {
+        text-align: center;
+        text-emphasis: bold;
+    }
+
+    .programme p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dates {
+        color: red;
+        border-top: dashed 3px blue;
+    }
+
+    .school-desc {
+        border-bottom: groove 3px blue;
+    }
+
+    .content {
+        display: block;
+        text-align: center;
+        padding-left: 0;
+    }
+
+
+    .overlay {
+        display: none;
+    }
+
+    .projects {
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .projects h2 {
+        padding-left: 0;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        
+    }
+    
+    .image-wrapper img {
+        width: 50%;
+        margin-left: 15%;
+
+
+    }
+
+    .start {
+        background-image: none;
+        height: 100px;
+    }
+
+
+/*  
+
+
+    .dynamic-portfolio {
+        font-size: 1rem;
+    }
+
+    .header {
+        font-size: 1rem;
+    }
+
+    
+
+    
+    .desc {
+        display: block;
+    }
+
+    .work {
+        display: block;
+    }
+
+    .school {
+        display: block;
+    }
+
+    .school-desc,.work-desc {
+        display: block;
+    }
+
+    .dates {
+        display: block;
+    }
+
+    #nus, #pku, #ocip, #internship {
+        display: block;
+    }
+*/
+
+
+
+}
