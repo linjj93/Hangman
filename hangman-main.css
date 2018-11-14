@@ -5,6 +5,9 @@
 
 .wrapper {
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("images/capitals.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -100;
   padding: 50px 5px;
   display: grid;
   font-family: 'Kalam', cursive;
@@ -163,6 +166,7 @@ button {
 
 @media screen and (min-width: 768px) {
   .wrapper {
+
     padding: 55px 5px;
     display: grid;
     text-align: center;
