@@ -13,15 +13,15 @@
   font-family: 'Kalam', cursive;
   color: white;
   text-align: center;
-  grid-auto-rows: minmax(50px, auto);
-  grid-template-columns: auto;
+  grid-auto-rows: minmax(5px, auto);
+  grid-template-columns: repeat( auto-fit, minmax(10px, 1fr) );
   grid-template-areas:
-    "h h h h h h sc"
-    "s s s s s s s"
-    "ws ws ws ws ws ws ws"
-    "g g g g g g g"
-    "wg wg wg wg wg wg wg"
-    "wl wl wl wl wl wl wl"
+    "h h h sc"
+    "s s s s"
+    "ws ws ws ws"
+    "g g g g"
+    "wg wg wg wg"
+    "wl wl wl wl"
 }
 
 .reset-reveal {
