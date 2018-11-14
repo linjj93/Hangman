@@ -88,12 +88,15 @@ table {
   font-size: 60px;
 }
 
+tr {
+  width: 100%;
+}
 
 td {
   text-align: center;
   border-bottom: solid white;
   height: 100px;
-  width: 100px;
+
 }
 
 
