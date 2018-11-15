@@ -1,3 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Work+Sans');
+
+
+
+.topnav {
+  height: 7.5%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: white;
+  background-color: #333;
+  z-index: 1;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.5%;
+}
+
+.topnav a, .project-heading, .life-dropdown {
+  display: inline-block;
+  color: #f2f2f2;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 5px solid #225fc1;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.topnav a:hover, .projects-dropdown-content a:hover, .life-dropdown:hover {
+  color: lightblue;
+  text-decoration: none;
+}
+
+.project-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.life-dropdown {
+  display: none;
+}
+
+.project-dropdown-content {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+  background: black;
+}
+
+.life-dropdown-content {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  top: 203px;
+  left: 250px;
+  background: black;
+}
+
+.project-dropdown-content a, .life-dropdown-content a {
+  display: block;
+  color: #f2f2f2;
+  padding: 15px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  border-bottom: 5px solid #225fc1;
+  margin: 0;
+}
+
+.project-dropdown:hover .project-dropdown-content {
+  display: block;
+}
+
+.life-dropdown:hover .life-dropdown-content {
+  display: block;
+}
+
+
+
 .heading {
   font-family: 'Kalam', cursive;
   text-shadow: 1px 1px 0 white;
@@ -9,7 +96,7 @@
   background-repeat: no-repeat;
   height: 100%;
   z-index: -100;
-  padding: 50px 5px;
+  padding: 20px 5px 50px;
   display: grid;
   font-family: 'Kalam', cursive;
   color: white;
@@ -175,9 +262,12 @@ button {
     background-repeat: no-repeat;
   }
 
+  
+  
+
   .wrapper {
     height: 100%;
-    padding: 57px 5px;
+    padding: 17px 5px 57px;
     display: grid;
     text-align: center;
     grid-auto-rows: minmax(150px, auto);
