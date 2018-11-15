@@ -7,6 +7,7 @@
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("images/capitals.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
   z-index: -100;
   padding: 50px 5px;
   display: grid;
@@ -168,13 +169,18 @@ button {
 
 
 @media screen and (min-width: 768px) {
-  .wrapper {
+  body {
+    background: url("images/capitals.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-    padding: 55px 5px;
+  .wrapper {
+    height: 100%;
+    padding: 57px 5px;
     display: grid;
     text-align: center;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-rows: 80px;
+    grid-auto-rows: minmax(150px, auto);
     grid-template-columns: auto;
     grid-template-areas:
       "s h h h h h wl wl"
