@@ -27,7 +27,7 @@
     
 }
 
-.my-nav a, .project-heading, .life-menu {
+.my-nav a, .dropdown-heading {
     display: block;
     color: #f2f2f2;
     padding: 15px;
@@ -45,16 +45,13 @@
 .my-nav a:hover {
     color: lightblue;
 }
-    
-.life-dropdown {
-    display: none;
-}
 
-.project-dropdown {
+.dropdown {
     position: relative;
 }
 
-.project-dropdown-content {
+
+.dropdown-content {
     display: none;
     z-index: 10;
     position: absolute;
@@ -63,16 +60,7 @@
     background: black;
 }
 
-.life-dropdown-content {
-    display: none;
-    z-index: 10;
-    position: fixed;
-    top: 203px;
-    left: 100%;
-    background: black;
-}
-
-.project-dropdown-content a, .life-dropdown-content a {
+.dropdown-content a {
     color: #f2f2f2;
     padding: 15px;
     text-decoration: none;
@@ -85,21 +73,14 @@
     margin: 0;
 }
 
-.project-dropdown:hover .project-dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.life-dropdown:hover .life-dropdown-content {
-    display: block;
-}
 
 .main-wrapper {
     margin-left: 250px;
 
-}
-
-.jumbotron {
-    transform: translateX(2%);
 }
 
 h1 {
@@ -359,7 +340,7 @@ h1 {
 
 
 
-    .my-nav a, .project-heading {
+    .my-nav a, .dropdown-heading {
         display: inline-block;
         color: #f2f2f2;
         padding: 0;
@@ -376,39 +357,51 @@ h1 {
         display: none;
     }
 
-    .project-dropdown {
+    .dropdown {
         display: inline-block;
         position: relative;
     }
 
-
-    .project-dropdown-content a, .life-dropdown-content a {
-        display: block;
-        color: #f2f2f2;
-        padding: 0 10px;
-        text-decoration: none;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 500;
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        border-bottom: 5px solid #225fc1;
-        margin: 0;
+    .dropdown-heading {
+        margin: 0 50px;
     }
 
-    .project-dropdown:hover .project-dropdown-content {
-        display: block;
+    .dropdown-content {
+        display: none;
         z-index: 10;
         position: absolute;
         top: 100%;
         left: 0;
         background: black;
         text-decoration: none;
-
+        
     }
 
-    #learning {
+    .dropdown-content a {
+        display: block;
+        color: #f2f2f2;
+        padding: 0 10px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        border-bottom: 5px solid #225fc1;
+        margin: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    #intro, #learning {
         display: none;
+    }
+
+    .start {
+        background-image: none;
+        height: 30px;
     }
 
     .main-wrapper {
@@ -493,9 +486,6 @@ h1 {
 
     }
 
-    .start {
-        background-image: none;
-        height: 100px;
-    }
+    
 
 }
