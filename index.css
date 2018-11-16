@@ -10,7 +10,7 @@
     100%{opacity: 1;}
     }
 
-.sidenav {
+.my-nav {
     padding-top: 25px;
     background-color: #333;
     height: 100%;
@@ -27,7 +27,7 @@
     
 }
 
-.sidenav a, .projects-menu, .life-menu {
+.my-nav a, .project-heading, .life-menu {
     display: block;
     color: #f2f2f2;
     padding: 15px;
@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-.sidenav a:hover {
+.my-nav a:hover {
     color: lightblue;
 }
     
@@ -50,12 +50,16 @@
     display: none;
 }
 
+.project-dropdown {
+    position: relative;
+}
+
 .project-dropdown-content {
     display: none;
     z-index: 10;
-    position: fixed;
-    top: 225px;
-    left: 250px;
+    position: absolute;
+    top: 0;
+    left: 100%;
     background: black;
 }
 
@@ -64,7 +68,7 @@
     z-index: 10;
     position: fixed;
     top: 203px;
-    left: 250px;
+    left: 100%;
     background: black;
 }
 
@@ -339,32 +343,71 @@ h1 {
 
 
 @media only screen and (max-width: 768px) {
-    .sidenav {
+    .my-nav {
         background-color: #333;
-        height: 100px;
+        height: 7.5%;
         width: 100%;
-        
         z-index: 1;
         top: 0;
         color: white;
         text-align: center;
+        padding: 0.5%;
         font-family: 'Montserrat', sans-serif;
+        position: fixed;
+        
     }
 
-    .sidenav a {
-        display: inline;
+
+
+    .my-nav a, .project-heading {
+        display: inline-block;
         color: #f2f2f2;
-        padding: 15px;
+        padding: 0;
         text-decoration: none;
         text-align: center;
-        font-size: 5px;
+        font-size: 20px;
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         border-bottom: 5px solid #225fc1;
-        margin: 0 5px;
+        margin: 0 30px;
     }
 
-    .sidenav h1, .sidenav p {
+    .my-nav h1, .my-nav p {
+        display: none;
+    }
+
+    .project-dropdown {
+        display: inline-block;
+        position: relative;
+    }
+
+
+    .project-dropdown-content a, .life-dropdown-content a {
+        display: block;
+        color: #f2f2f2;
+        padding: 0 10px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        border-bottom: 5px solid #225fc1;
+        margin: 0;
+    }
+
+    .project-dropdown:hover .project-dropdown-content {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: black;
+        text-decoration: none;
+
+    }
+
+    #learning {
         display: none;
     }
 
