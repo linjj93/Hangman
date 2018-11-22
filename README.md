@@ -1,9 +1,7 @@
-This will be my GitHub page.
+This is my GitHub page.
 
-It will consist of:
+My current projects:
 
-My Resume for applying jobs
-Various Projects I am working on, which include:
 1. a hangman game (Completed)
 2. an expenditure tracker (Completed)
 3. a modular calculator built using basic ReactJS (Completed)
@@ -11,9 +9,11 @@ Various Projects I am working on, which include:
 
 Upcoming Plans:
 
-- Working on creating a web application with Google Maps API to list down my favourite food and leisure places in Singapore, to mimic a scaled-down mini version of Yelp, Fave, Meituan, Dianping etc.
+- Learning how to use Google Maps API and using it to show a location map of my favourite food and leisure places;
 
-- Learn ReactJS lifecycle methods and React Router, and implement these concepts into a website, documenting my backpacking trip in 2017 to China and Korea on a single page application (Drafted a website using CSS Bootstrap under repo "myFirstWebsite" - that will be revamped)
+- Learn ReactJS more in depth with lifecycle methods and React Router, and create a single web application that documents my travels to various cities with photos and reflections.
+
+
 
  
 
