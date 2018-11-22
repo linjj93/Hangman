@@ -1,33 +1,20 @@
-This will be my GitHub page.
+This is my GitHub page.
 
-It will consist of:
+My current projects:
 
-My Resume for applying jobs
-Various Projects I am working on, which include:
-1. a hangman game (version 1.0 complete)
-2. an expenditure tracker (version 1.0 complete)
-3. tic-tac-toe (followed a tutorial, going to code one by myself from scratch)
-4. an app to help users (individuals or in groups) decide what to eat based on their preferences
+1. a hangman game (Completed)
+2. an expenditure tracker (Completed)
+3. a modular calculator built using basic ReactJS (Completed)
 
 
+Upcoming Plans:
 
-Hangman:
-1. Use media queries
+- Learning how to use Google Maps API and using it to show a location map of my favourite food and leisure places;
 
+- Learn ReactJS more in depth with lifecycle methods and React Router, and create a single web application that documents my travels to various cities with photos and reflections.
 
 
 
-Expenditure Tracker:
+ 
 
-1. Improve styling
-  - **implemented** CSS Grid
-2. **added** subtotal buttons for different expense types
-3. **added**Click subtotal button to get expense only in that category
-4. colour-code category
-5. **added** a savings tracker
-6. **added** income option
-7. **added** alert if form not filled correctly
-8. built-in calendar***
-9. calculate percentage of income saved
-10. **added** functions for edit/delete buttons
-11. **added** function for savings to change when income is editted
+
