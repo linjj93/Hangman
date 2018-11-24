@@ -10,6 +10,8 @@
     100%{opacity: 1;}
     }
 
+/* NAVIGATION BAR */
+
 .my-nav {
     padding-top: 25px;
     background-color: #333;
@@ -22,6 +24,7 @@
     color: white;
     text-align: center;
     font-family: 'Montserrat', sans-serif;     
+
 }
 
 .my-nav a, .dropdown-heading {
@@ -74,6 +77,7 @@
     display: block;
 }
 
+/* END OF NAVIGATION BAR */
 
 .main-wrapper {
     margin-left: 250px;
@@ -93,13 +97,29 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     height: 525px;
-    margin-bottom: 50px;
+    margin-bottom: 2%;
 
 }
 
-.container {
+.about {
     animation: blink 1s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    padding-top: 0;
+    text-align: justify;
+    background-color: lightgrey;
+    margin: 2%;
+    margin-top: 0;
+    border-radius: 1%;
 }
+
+.python {
+    border-radius: 2%;
+}
+
+
+/* PORTFOLIO SECTION */
 
 .dynamic-portfolio {
     display: flex;
@@ -247,6 +267,10 @@ h1 {
     padding-right: 150px;   
      
 }
+.project-row-1 {
+    display: flex;
+    justify-content: space-between;
+}
 
 .projects h2 {
     padding-left: 150px;
@@ -328,11 +352,10 @@ h1 {
         z-index: 1;
         top: 0;
         color: white;
-        text-align: center;
         padding: 0.5%;
         font-family: 'Montserrat', sans-serif;
         position: fixed;
-        
+        display: flex;
     }
 
 
@@ -342,12 +365,13 @@ h1 {
         color: #f2f2f2;
         padding: 0;
         text-decoration: none;
-        text-align: center;
+
         font-size: 20px;
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         border-bottom: 5px solid #225fc1;
-        margin: 0 30px;
+        margin: 0;
+
     }
 
     .my-nav h1, .my-nav p {
@@ -355,13 +379,14 @@ h1 {
     }
 
     .dropdown {
-        display: inline-block;
         position: relative;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 
-    .dropdown-heading {
-        margin: 0 50px;
-    }
 
     .dropdown-content {
         display: none;
