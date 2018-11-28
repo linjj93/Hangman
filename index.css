@@ -4,6 +4,10 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 @keyframes blink{
     0%{opacity: 0;}
     50%{opacity: .5;}
@@ -23,7 +27,7 @@
     left: 0;
     color: white;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;     
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -135,7 +139,7 @@ h1 {
     padding-left: 45px;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
 
@@ -161,7 +165,7 @@ h1 {
 
 #nus, #pku, #ocip, #internship {
     display: flex;
-    flex-basis: 100px;   
+    flex-basis: 100px;
     justify-content: stretch;
     flex-wrap: wrap;
 }
@@ -179,7 +183,7 @@ h1 {
 .dates {
     flex: 1;
     align-self: center;
-    text-align: center; 
+    text-align: center;
 }
 
 
@@ -195,7 +199,7 @@ h1 {
     justify-content: stretch;
     align-items: center;
     flex-wrap: wrap;
-    
+
 }
 
 
@@ -210,13 +214,13 @@ h1 {
 .logo {
     flex: 1;
     align-self: center;
-    text-align: center; 
+    text-align: center;
 }
 
 .desc-p {
     flex: 3;
     align-self: center;
-    
+
 }
 
 
@@ -264,8 +268,8 @@ h1 {
 .projects {
     height: 525px;
     font-family: inherit;
-    padding-right: 150px;   
-     
+    padding-right: 150px;
+
 }
 .project-row-1 {
     display: flex;
@@ -276,7 +280,7 @@ h1 {
     padding-left: 150px;
 }
 
-.image-wrapper { 
+.image-wrapper {
     width: 400px;
     height: 300px;
     position: relative;
@@ -312,7 +316,7 @@ h1 {
     opacity: 0;
     font-size: 2.5rem;
     flex-wrap: wrap;
-    
+
 }
 
 .overlay-desc {
@@ -396,7 +400,7 @@ h1 {
         left: 0;
         background: black;
         text-decoration: none;
-        
+
     }
 
     .dropdown-content a {
@@ -499,15 +503,15 @@ h1 {
     .image-wrapper {
         width: 80%;
         padding: auto;
-        
+
     }
-    
+
     .image-wrapper img {
         height: 75%;
         width: 75%;
 
     }
 
-    
+
 
 }
