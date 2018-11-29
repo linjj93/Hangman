@@ -266,19 +266,18 @@ h1 {
 /*PROJECTS*/
 
 .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
     height: 525px;
     font-family: inherit;
-    padding-right: 150px;
-
 }
 .project-row-1 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.projects h2 {
-    padding-left: 150px;
-}
+
 
 .image-wrapper {
     width: 400px;
@@ -286,7 +285,7 @@ h1 {
     position: relative;
     cursor: pointer;
     text-align: center;
-    left: 10%;
+
 }
 
 .image-wrapper:hover .overlay{
@@ -297,12 +296,13 @@ h1 {
 .image-wrapper img {
     width: 400px;
     height: 300px;
-    display: block;
+    display: inline-block;
 }
 
 .image-wrapper:hover img {
     opacity: 0.1;
 }
+
 .overlay {
     width: 400px;
     height: 300px;
@@ -435,8 +435,8 @@ h1 {
         width: 100%;
     }
 
-    .jumbotron {
-        width: 90%;
+    .about {
+        margin-top: 7.5%;
     }
 
     .python {
@@ -494,6 +494,12 @@ h1 {
     .projects {
         padding-right: 0;
         width: 100%;
+
+    }
+
+    .project-row-1 {
+        display: block;
+
     }
 
     .projects h2 {
@@ -501,8 +507,10 @@ h1 {
     }
 
     .image-wrapper {
-        width: 80%;
+        display: block;
         padding: auto;
+        text-align: center;
+
 
     }
 
