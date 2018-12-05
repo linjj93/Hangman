@@ -5,19 +5,18 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link rel = "stylesheet" href = "index.css">
     <title></title>
   </head>
-  <body class = "bg-light">
+  <body>
     <!--navbar-->
     <div class = "my-nav">
       <h1>Jinjia.</h1>
       <p>My first foray into programming.</p>
-      <a href="#about" id = "intro">Intro</a>
+      <div>
+        <a href="#about" id = "intro">Intro</a>
+      </div>
+      
 
 
 
@@ -47,17 +46,18 @@
     <div class = "main-wrapper">
 
       <div class="about">
-        <h2>Hello World.</h2>
+        <h1>Hello World.</h1>
         <p>
         I am Jinjia, aspiring to be a coder and working on my first ever personal website. My journey was
         kickstarted when I took a introductory class to computer science with Python as the "language" of
         instruction. One problem, in particular, really introduced me to the highs and lows of programming. </p>
 
 
-        <p align = "center">
-        <img class ="python" src = "images/codingquestion1.png">
-        <img class = "python" src = "images/codinganswer1.png">
-        </p>
+        <div class = "python">
+          <img src = "images/codingquestion1.png">
+          <img src = "images/codinganswer1.png">
+        </div>
+
 
         <p>We had just started learning about loops, iterations and recursions, and
         were taught that for every recursion, there was a way to code the same algorithm in iteration. The
@@ -83,7 +83,7 @@
         <div class = "content">
 
           <div class = "desc">
-            <h3 class = "header-font header">In Progress</h3>
+            <h2 class = "header-font header">In Progress</h2>
 
             <p class = "font-italic text-primary lead">Python</p>
             <p class = "font-italic text-primary lead">CSS (Bootstrap, Flexbox, Grid)</p>
@@ -92,14 +92,9 @@
           </div>
 
           <div class = "school">
-
-            <h3 align = "left" id = "education-title" class = "header">Student Life</h3>
-
-
+            <h2 id = "education-title" class = "header">Student Life</h2>
             <div class = "school-desc">
-
               <div id = "nus">
-
                 <div class = "dates">
                   <p>Aug 2014 - Jul 2018</p>
                 </div>
@@ -108,68 +103,44 @@
                   <p><strong>Graduated with B.Soc.Sci. (Hons., Distinction), Psychology</strong></p>
                   <p>National University of Singapore</p>
                 </div>
-
-
               </div>
 
               <div id = "pku">
-
                 <div class = "dates">
                   <p>Feb 2017 - Jun 2017</p>
                 </div>
-
                 <div class = "programme">
                   <p><strong>Student Exchange Programme in Beijing, China</strong></p>
                   <p>Peking University</p>
                 </div>
-
-
               </div>
 
               <div id = "internship">
-
                 <div class = "dates">
                   <p>Jun 2016 - Jul 2016</p>
                 </div>
-
                 <div class = "programme">
                   <p><strong>Overseas Internship in Hangzhou, China</strong></p>
                   <p>KidsGlobal International</p>
                 </div>
-
-
               </div>
 
-
-
               <div id = "ocip">
-
                 <div class = "dates">
                   <p>Dec 2015</p>
                 </div>
-
                 <div class = "programme">
                   <p><strong>Service Learning Trip to Champassak, Pakse, Laos</strong></p>
-                  <p>Project EMP - Empowering Lives, Moulding the Future, Paying it Forward</p>
+                  <p>Project EMP</p>
                 </div>
-
-
               </div>
-
             </div>
           </div>
 
           <div class = "work">
-
-
-
-            <h3 align = "left" class = "header">Delving into IT</h3>
-
-
+            <h2 class = "header">Delving into IT</h2>
             <div class = "work-desc">
-
               <div id = "psd">
-
                 <div class = "logo">
                   <a href = "https://www.psd.gov.sg/"><img src = "images/psd.png"></a>
                 </div>
@@ -180,44 +151,33 @@
                   Provide support for release of HR data warehouse, ODIN. Dashboard making on Tableau. Mastery of parameters, filters, calculated fields, marks.
                   </p>
                 </div>
-
               </div>
 
               <div id = "roboto">
-
                 <div class = "logo">
                   <a href = "https://www.roboto.sg/"><img src = "images/roboto.png"></a>
                 </div>
-
                 <div class = "desc-p">
                   <p><strong>Roboto Academy</strong></p>
                   <p>
                     Assist in coaching students from primary to secondary level on basic programming concepts through the use of tools like Scratch, micro:bit and Dash.
                   </p>
                 </div>
-
               </div>
-
             </div>
-
           </div>
         </div>
 
-
         <div class = "buttons">
-
           <div id = "desc-btn">
             <strong>In Progress</strong>
           </div>
-
           <div id = "school-btn">
             <strong>Student Life</strong>
           </div>
-
           <div id = "work-btn">
             <strong>Delving into IT</strong>
           </div>
-
         </div>
       </div>
 
@@ -253,11 +213,6 @@
 
         </div> <!-- end of row -->
       </div>
-
-
-
-
-
     </div>
 
 
@@ -274,8 +229,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="index-app.js"></script>
+     <script src="index-app.js"></script>
   </body>
 </html>
