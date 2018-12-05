@@ -196,6 +196,7 @@ h3 {
 }
 
 .image-wrapper {
+
     display: block;
     padding: auto;
     text-align: center;
@@ -203,8 +204,8 @@ h3 {
 }
 
 .image-wrapper img {
-    height: 75%;
-    width: 75%;
+    height: 275px;
+    width: 350px;
     border-radius: 2%;
     box-shadow: 5px 5px black;
 }
@@ -304,6 +305,7 @@ h3 {
     .about {
         margin-top: 2%;
         margin-right: 1%;
+        padding: 3%;
     }
 
     .python img {
