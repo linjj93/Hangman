@@ -5,7 +5,9 @@
 }
 
 
-
+body {
+    margin: 0;
+}
 
 .my-nav {
     background-color: #333;
@@ -14,7 +16,7 @@
     z-index: 1;
     top: 0;
     color: white;
-    padding: 0.5%;
+
     font-family: 'Montserrat', sans-serif;
     position: fixed;
     display: flex;
@@ -220,7 +222,7 @@ h3 {
         background-image: url("images/jeju-original.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        height: 525px;
+        height: 30rem;
         margin: 0;
         width: 100%;
  
