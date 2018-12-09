@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Work+Sans');
+
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+body {
+    margin: 0;
+}
+
+/* Navigation Bar Styles */
+
+.topnav {
+    background-color: #333;
+    min-height: 7.5%;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    display: flex;
+}
+
+#home {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.dropdown-heading {
+    display: inline-block;
+    color: #f2f2f2;
+    padding: 0;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 5px solid #225fc1;
+    margin: 0;
+}
+
+.topnav h1, .topnav p {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dropdown-content {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    background: black;
+    text-decoration: none;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #f2f2f2;
+    padding: 0 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 5px solid #225fc1;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Navigation Bar End */
+
+.main {
+    margin: 12.5% 2%;
+}
+
+
+
+/* Table Styles */ 
+
+.expense-wrapper p {
+    margin: 0
+}
+
+.expense-wrapper {
+    display: flex;
+    background: lightgrey;
+    border-radius: 1rem;
+    box-shadow: 5px 5px black; 
+    margin-bottom: 2%;
+    padding: 2%;
+}
+
+.expense-content-left, .expense-content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.expense-content-left {
+    flex: 3;
+}
+
+.expense-content-right {
+    flex: 1;
+    padding-left: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.expense-amount, .expense-name {
+    flex: 3;
+    font-size: 2em;
+}
+
+.expense-type, .expense-description {
+    flex: 1;
+}
+
+.add-btn {
+    background: #313D49;
+    border-radius: 1rem;
+    box-shadow: 5px 5px black; 
+    margin-bottom: 2%;
+    padding: 2%;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.add-btn:hover {
+    color: #313D49;
+    background: aqua;
+    transition: 0.2s ease-in-out;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background: #313D49;
+    justify-content: space-around;
+    height: 60%;
+    position: absolute;
+    padding: 0 1em;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    z-index: 10;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+    box-shadow: 0 0 5px 7.5px lightgrey; 
+    color: white;
+}
+
+.form h2 {
+    margin: 0;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-header span {
+    font-size: 1.5em;
+}
+
+.form-header span:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
+.form-top {
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+input, select {
+    display: block;
+    font-size: 1em;
+    padding: 0.5rem;
+    background: #313D49;
+    border: solid 1px white;
+    color: white;
+}
+
+#save-btn {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+input:not(:first-child) {
+    margin-top: 0.5em;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: lime;
+}
+
+

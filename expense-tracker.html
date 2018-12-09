@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="expense-tracker-styles.css">
+    </head>
+    <body>
+        <!-- Navigation Bar Start -->
+        <header class = "topnav">
+            <div class = "dropdown">
+                <div class = "dropdown-heading"><a href="index.html" id = "home">Home</a>            </div>
+            </div>
+            
+        
+            <div class = "dropdown">
+              <div class = "dropdown-heading" id = "projects">Projects</div>
+              <div class = "dropdown-content">
+                <a href="hangman.html">Hangman</a>
+                <a href="expenditure-tracker.html">Expenditure Tracker</a>
+                <a href="https://linjj93.github.io/my-react-calculator">Calculator</a>
+              </div>
+            </div>
+      
+            <div class = "dropdown">
+              <div class = "dropdown-heading" id = "life">Life</div>
+              <div class = "dropdown-content">
+                <a href="https://linjj93.github.io/backpacking-trip">Backpacking Trip 2017</a>
+              </div>
+            </div>
+        </header>   
+        <!-- Navigation Bar End -->
+        <!-- Main Start -->
+        <div class = "main">
+            
+            <!-- Expense Table Start -->
+            <div class = "expense-table">
+                <h1>{{ title }}</h1>
+                <!-- Expenses Start -->
+                <div>
+                    <div class = "expense-wrapper" v-for="expense in expensesList"  v-on:click = "toggleDetails(expense)">
+                        <div class = "expense-content-left">
+                            <p class = "expense-name">{{ expense.name }}</p>
+                            <p class = "expense-description" v-show = "expense.showDetail">{{ expense.description }}</p>
+                        </div>
+                        <div class = "expense-content-right">
+                            <p class = "expense-amount">{{ expense.amount }}</p>
+                            <p class = "expense-type" v-show = "expense.showDetail">{{ expense.type }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Expenses End - -->
+            
+            <div class = "add-btn">
+                <div v-on:click = "triggerForm">{{ content }}</div>
+            </div>
+            <div class = "form" id ="popup" v-show = "formTriggered">
+                    <div class = "form-header">
+                        <h2>{{ title }}</h2>
+                        <span v-on:click = "closeForm">{{ cross }}</span>
+                    </div>
+                        
+                    <div class = "form-top">
+                        <input type="text" id="new-expense-amount" name = "amount" placeholder ="Amount Spent in $"/>
+                        <select id = "expense-type" name = "type">
+                            <option selected disabled>Category</option>
+                            <option value="F&B">F&B</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Leisure">Leisure</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense"/>
+                    <input type="text" id="new-expense-description" name = "description" placeholder ="Description"/>
+                    <button type = "submit" id = "save-btn" v-on:click="addNewExpense">{{ save }}</button>
+            </div>
+            
+            
+            
+            
+            
+            
+            <!-- Input Form -->
+            
+                
+                
+                
+                <!-- 
+                    Add Interactivity
+                    Calculate Total
+                    Do Category Breakdown           
+                -->
+            </div>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <script src="expense-tracker-app.js"></script>
+    </body>
+</html>
