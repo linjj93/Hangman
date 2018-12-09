@@ -1,38 +1,47 @@
-const introButton = document.getElementById("desc-btn");
-const schoolButton = document.getElementById("school-btn");
-const workButton = document.getElementById("work-btn");
 
-const introP = document.getElementsByClassName("desc")[0];
-const schoolP = document.getElementsByClassName("school")[0];
-const workP = document.getElementsByClassName("work")[0];
 
-introButton.addEventListener("click", () => {
-    introButton.style.backgroundColor = "white";
-    introButton.style.color = "black";
-    introP.style.display = "block";
-    schoolP.style.display = "none";
-    workP.style.display = "none";
-    schoolButton.style = "initial";
-    workButton.style = "initial";
+$('.work').hide();
+$('.school').hide();
+$('#desc-btn').css('backgroundColor', 'grey');
+$('#desc-btn').css('color', 'red');
+
+
+$('#desc-btn').click(function(){
+    $('.work').hide();
+    $('.school').hide();
+    $('.desc').show();
+    $('#desc-btn').css('backgroundColor', 'grey');
+    $('#desc-btn').css('color', 'red');
+    $('#work-btn').css('backgroundColor', 'black');
+    $('#work-btn').css('color', 'white');
+    $('#school-btn').css('backgroundColor', 'black');
+    $('#school-btn').css('color', 'white');
 });
 
-schoolButton.addEventListener("click", () => {
-    schoolButton.style.backgroundColor = "white";
-    schoolButton.style.color = "black";
-    introP.style.display = "none";
-    schoolP.style.display = "block";
-    workP.style.display = "none";
-    introButton.style = "initial";
-    workButton.style = "initial";    
+$('#work-btn').click(function(){
+    $('.desc').hide();
+    $('.school').hide();
+    $('.work').show();
+    $('#work-btn').css('backgroundColor', 'grey');
+    $('#work-btn').css('color', 'red');
+    $('#desc-btn').css('backgroundColor', 'black');
+    $('#desc-btn').css('color', 'white');
+    $('#school-btn').css('backgroundColor', 'black');
+    $('#school-btn').css('color', 'white');
+    
 });
 
-workButton.addEventListener("click", () => {
-    workButton.style.backgroundColor = "white";
-    workButton.style.color = "black";
-    introP.style.display = "none";
-    schoolP.style.display = "none";
-    workP.style.display = "block";    
-    introButton.style = "initial";
-    schoolButton.style = "initial";
-})
+$('#school-btn').click(function(){
+    $('.work').hide();
+    $('.desc').hide();
+    $('.school').show();
+    $('#school-btn').css('backgroundColor', 'grey');
+    $('#school-btn').css('color', 'red');
+    $('#desc-btn').css('backgroundColor', 'black');
+    $('#desc-btn').css('color', 'white');
+    $('#work-btn').css('backgroundColor', 'black');
+    $('#work-btn').css('color', 'white');
+});
+
+
 
