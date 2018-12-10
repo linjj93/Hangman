@@ -23,23 +23,16 @@ body {
     display: flex;
 }
 
-#home {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
 
-}
-
-.dropdown-heading {
+#home, .dropdown-heading {
     display: inline-block;
     color: #f2f2f2;
     padding: 0;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 36px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    border-bottom: 5px solid #225fc1;
+    border-bottom: 10px solid #225fc1;
     margin: 0;
 }
 
@@ -93,7 +86,7 @@ body {
 /* Table Styles */ 
 
 .expense-wrapper p {
-    margin: 0
+    margin: 0;
 }
 
 .expense-wrapper {
@@ -103,6 +96,7 @@ body {
     box-shadow: 5px 5px black; 
     margin-bottom: 2%;
     padding: 2%;
+    font-size: 25px;
 }
 
 .expense-content-left, .expense-content-right {
@@ -179,7 +173,7 @@ body {
 }
 
 .form-header span {
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
 .form-header span:hover {
@@ -197,7 +191,7 @@ body {
 
 input, select {
     display: block;
-    font-size: 1em;
+    font-size: 3em;
     padding: 0.5rem;
     background: #313D49;
     border: solid 1px white;
@@ -205,7 +199,7 @@ input, select {
 }
 
 #save-btn {
-    font-size: 1em;
+    font-size: 3em;
     font-weight: bold;
     padding: 0.5rem;
 }
