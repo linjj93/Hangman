@@ -3,16 +3,14 @@ This is my GitHub page.
 My current projects:
 
 1. a hangman game (Completed)
-2. an expenditure tracker (Completed)
-3. a modular calculator built using basic ReactJS (Completed)
+2. an expense tracker (Completed an older version previously and currently refactoring with better styling and Vue.js)
+3. a modular calculator built using basic ReactJS (Completed
+4. All projects integrated and accessible via a static homepage @ https://linjj93.github.io
 
 
-Upcoming Plans:
+In Progress:
 
-- Learning how to use Google Maps API and using it to show a location map of my favourite food and leisure places;
-
-- Learn ReactJS more in depth with lifecycle methods and React Router, and create a single web application that documents my travels to various cities with photos and reflections.
-
+- Restyling Expense Tracker with Vue JS and improved CSS
 
 
  
