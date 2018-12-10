@@ -5,9 +5,9 @@
     </head>
     <body>
         <!-- Navigation Bar Start -->
-        <header class = "topnav">
+        <div class = "topnav">
             <div class = "dropdown">
-                <div class = "dropdown-heading"><a href="index.html" id = "home">Home</a>            </div>
+                <a href="index.html" id = "home">Home</a>
             </div>
             
         
@@ -26,7 +26,7 @@
                 <a href="https://linjj93.github.io/backpacking-trip">Backpacking Trip 2017</a>
               </div>
             </div>
-        </header>   
+        </div>   
         <!-- Navigation Bar End -->
         <!-- Main Start -->
         <div class = "main">
@@ -50,27 +50,26 @@
             </div>
             <!-- Expenses End - -->
             
-            <div class = "add-btn">
-                <div v-on:click = "triggerForm">{{ content }}</div>
+            <div class = "add-btn" v-on:click = "triggerForm">
+                <div>{{ content }}</div>
             </div>
             <div class = "form" id ="popup" v-show = "formTriggered">
+
+
                     <div class = "form-header">
                         <h2>{{ title }}</h2>
                         <span v-on:click = "closeForm">{{ cross }}</span>
                     </div>
                         
                     <div class = "form-top">
-                        <input type="text" id="new-expense-amount" name = "amount" placeholder ="Amount Spent in $"/>
-                        <select id = "expense-type" name = "type">
+                        <input type="text" id="new-expense-amount" name = "amount" placeholder ="Amount Spent in $" v-model = "amount"/>
+                        <select id = "expense-type" name = "type" v-model = "type" >
                             <option selected disabled>Category</option>
-                            <option value="F&B">F&B</option>
-                            <option value="Shopping">Shopping</option>
-                            <option value="Leisure">Leisure</option>
-                            <option value="Others">Others</option>
+                            <option v-for = "category in categories">{{ category }}</option>
                         </select>
                     </div>
-                    <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense"/>
-                    <input type="text" id="new-expense-description" name = "description" placeholder ="Description"/>
+                    <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
+                    <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>
                     <button type = "submit" id = "save-btn" v-on:click="addNewExpense">{{ save }}</button>
             </div>
             

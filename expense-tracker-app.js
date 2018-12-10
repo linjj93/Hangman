@@ -20,7 +20,9 @@ const expenses = [
         amount: '$20',
         showDetail: false
     }
-]
+];
+
+const categories = ["F&B", "Leisure", "Shopping", "Others"];
 
 
 const app = new Vue({
@@ -52,6 +54,8 @@ const addExpenseButton = new Vue({
 });
 
 
+
+
 const form = new Vue({
     el: '.form',
     data: {
@@ -59,6 +63,12 @@ const form = new Vue({
         title: "Add New Expense",
         cross: "X",
         save: "Save",
+        name: '',
+        amount: '',
+        description: '',
+        type: '',
+        categories: categories,
+
     },
     methods: {
         closeForm: function() {      
@@ -66,10 +76,17 @@ const form = new Vue({
             $(".expense-wrapper").css("opacity", "1");
             $(".add-btn").css("opacity", "1");
         },
+        
         addNewExpense: function() {
-            const newItem = $('.form').serializeArray();
-            console.log(newItem);
-            alert(newItem);
-        }
+            const newItem = {
+                name: this.name,
+                description: this.description,
+                amount: "$" + this.amount,
+                type: this.type,
+                showDetail: false
+            };
+            expenses.push(newItem);
+            this.closeForm();
+        },
     }
 });
