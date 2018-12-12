@@ -62,8 +62,9 @@
                         
                     <div class = "form-top">
                         <input type="text" id="new-expense-amount" name = "amount" placeholder ="Amount Spent in $" v-model = "amount"/>
-                        <select id = "expense-type" name = "type" v-model = "type" >
-                            <option selected disabled>Category</option>
+                        
+                        <select id = "expense-type" name = "type" v-model = "type">
+                            <option selected = "selected" disabled>Category</option>
                             <option v-for = "category in categories">{{ category }}</option>
                         </select>
                     </div>

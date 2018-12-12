@@ -1,26 +1,4 @@
-const expenses = [
-    {
-        name: 'Lunch',
-        description: 'ate chicken chop',
-        type: 'F&B',
-        amount: '$6.50',
-        showDetail: false
-    },
-    {
-        name: 'Teo Heng',
-        description: 'talk cock sing song',
-        type: 'Leisure',
-        amount: '$14',
-        showDetail: false
-    },
-    {
-        name: 'Arcade',
-        description: 'Cow Play Cow Moo',
-        type: 'Leisure',
-        amount: '$20',
-        showDetail: false
-    }
-];
+const expenses = [];
 
 const categories = ["F&B", "Leisure", "Shopping", "Others"];
 
@@ -32,7 +10,7 @@ const app = new Vue({
         expensesList: expenses
     },
     methods: {
-        toggleDetails: function(expense) {
+        toggleDetails(expense) {
             expense.showDetail = !expense.showDetail;     
         }
     }
@@ -45,15 +23,13 @@ const addExpenseButton = new Vue({
         content: 'Add Expense'
     },
     methods: {
-        triggerForm: function() {
+        triggerForm() {
             form.formTriggered = !form.formTriggered;
             $(".expense-wrapper").css("opacity", "0.2");
             $(".add-btn").css("opacity", "0.2");
         }
     }
 });
-
-
 
 
 const form = new Vue({
@@ -71,22 +47,48 @@ const form = new Vue({
 
     },
     methods: {
-        closeForm: function() {      
-            form.formTriggered = !form.formTriggered;
+        closeForm() {      
+            this.formTriggered = !this.formTriggered;
             $(".expense-wrapper").css("opacity", "1");
             $(".add-btn").css("opacity", "1");
         },
+
+        isIncomplete() {
+            return (this.name == "" || this.description == "" || this.amount == "" || this.type == "")
+        }, 
         
-        addNewExpense: function() {
-            const newItem = {
-                name: this.name,
-                description: this.description,
-                amount: "$" + this.amount,
-                type: this.type,
-                showDetail: false
-            };
-            expenses.push(newItem);
-            this.closeForm();
+        isNotNumber(ele) {
+            return isNaN(ele);
+        },
+
+        didNotSelectCategory() {
+            return !this.type;
+        },
+        
+        addNewExpense() {
+
+            if (this.didNotSelectCategory()) {
+                alert("You did not select a category!");
+            } else if (this.isIncomplete()) {
+                alert("The form is incomplete.");
+                return;
+            } else if (this.isNotNumber(this.amount)) {
+                alert("Your expense amount is invalid!");
+            } else {
+                const newItem = {
+                    name: this.name,
+                    description: this.description,
+                    amount: "$" + this.amount,
+                    type: this.type,
+                    showDetail: false
+                };
+                expenses.push(newItem);
+                this.name = "";
+                this.description = "";
+                this.amount = "";
+                this.type = "";
+                this.closeForm();
+            }
         },
     }
 });
