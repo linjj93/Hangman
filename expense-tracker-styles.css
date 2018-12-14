@@ -83,7 +83,6 @@ body {
 }
 
 
-
 .category-wrapper {
     display: none;
 }
@@ -228,22 +227,7 @@ input[type="text"]:focus {
     margin-top: 0;
 }
 
-@media screen and (min-width: 769px) {
-    body, html {
-        height: 100%;
-    }
-
-    .main {
-        height: 100%;
-        margin-top: 5%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .expense-section {
-        flex: 3;
-    }
-
+@media only screen and (min-width: 632px) {
     .category-wrapper {
         display: flex;
         flex-direction: column;
@@ -268,4 +252,21 @@ input[type="text"]:focus {
         margin-top:0;
     }
 
+    body, html {
+        height: 100%;
+    }
+
+    .main {
+        height: 100%;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .expense-section {
+        flex: 3;
+    }
 }
+
+
+
