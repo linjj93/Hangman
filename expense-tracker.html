@@ -29,10 +29,20 @@
         <!-- Navigation Bar End -->
         <!-- Main Start -->
         <div class = "main">
-            
+            <!-- Category Section Start-->
+            <div class = "category-wrapper">
+                <div v-for="category in categoriesList" v-bind:style = "{backgroundColor: category.color}">
+                    <p>{{ category.name }}</p>
+                    <p>{{ "$" + category.spending }}</p>
+                </div>
+            </div>
+            <!-- Category Section End -->
             <!-- Expense Table Start -->
+            <div class ="expense-section">
             <div class = "expense-table">
                 <h1>{{ title }}</h1>
+                
+                                
                 <!-- Expenses Start -->
                 <div>
                     <div class = "expense-wrapper" v-for="expense in expensesList"  v-on:click = "toggleDetails(expense)">
@@ -52,6 +62,10 @@
             <div class = "add-btn" v-on:click = "triggerForm">
                 <div>{{ content }}</div>
             </div>
+            
+
+            </div>
+
             <div class = "form" id ="popup" v-show = "formTriggered">
 
 
@@ -61,12 +75,19 @@
                     </div>
                         
                     <div class = "form-top">
-                        <input type="text" id="new-expense-amount" name = "amount" placeholder ="Amount Spent in $" v-model = "amount"/>
+                        <div>
+                            <label for = "new-expense-amount">Amount Spent (in $)</label>
+                            <input type="text" id="new-expense-amount" name = "amount" v-model = "amount"/>
+                        </div>
+
+                        <div>
+                            <label for = "expense-type-menu">Pick a Category</label>
+                            <select id = "expense-type-menu" name = "type" v-model = "type">
+                                <option selected = "selected" disabled>Category</option>
+                                <option v-for = "category in categories">{{ category.name }}</option>
+                            </select>
+                        </div>
                         
-                        <select id = "expense-type" name = "type" v-model = "type">
-                            <option selected = "selected" disabled>Category</option>
-                            <option v-for = "category in categories">{{ category }}</option>
-                        </select>
                     </div>
                     <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
                     <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>

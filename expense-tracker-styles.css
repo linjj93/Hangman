@@ -29,7 +29,7 @@ body {
     color: #f2f2f2;
     padding: 0;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     border-bottom: 10px solid #225fc1;
@@ -64,7 +64,7 @@ body {
     padding: 0 10px;
     text-decoration: none;
     text-align: center;
-    font-size: 36px;
+    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     border-bottom: 5px solid #225fc1;
@@ -79,8 +79,14 @@ body {
 
 .main {
     margin: 12.5% 2%;
+
 }
 
+
+
+.category-wrapper {
+    display: none;
+}
 
 
 /* Table Styles */ 
@@ -216,4 +222,50 @@ input[type="text"]:focus {
 
 .form-top select::before {
     content: "Category:";
+}
+
+#new-expense-amount {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 769px) {
+    body, html {
+        height: 100%;
+    }
+
+    .main {
+        height: 100%;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .expense-section {
+        flex: 3;
+    }
+
+    .category-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex: 1;
+        font-size: 25px;
+    }
+
+    .category-wrapper div {
+        display: inline-block;
+        box-shadow: -5px 5px black;
+        border: 1px solid lightgrey;
+        padding: 5%;
+        border-radius: 5%;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 5%;        
+    }
+
+    .category-wrapper div p:nth-child(2) {
+        font-size: 2em;
+        margin-top:0;
+    }
+
 }

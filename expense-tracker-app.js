@@ -1,7 +1,27 @@
 const expenses = [];
 
-const categories = ["F&B", "Leisure", "Shopping", "Others"];
-
+const categories = [
+    {
+        name: "F&B",
+        spending: 0,
+        color: "red"
+    },
+    {
+        name: "Leisure",
+        spending: 0,
+        color: "blue"
+    },
+    {
+        name: "Shopping",
+        spending: 0,
+        color: "yellow" 
+    },
+    {
+        name: "Others",
+        spending: 0,
+        color: "green"
+    }
+];
 
 const app = new Vue({
     el: '.expense-table',
@@ -82,6 +102,12 @@ const form = new Vue({
                     type: this.type,
                     showDetail: false
                 };
+                for (let i = 0; i < categorySection.categoriesList.length; i++) {
+                    console.log(categorySection.categoriesList[i].name);
+                    if (categorySection.categoriesList[i].name == this.type) {
+                        categorySection.add(this.type, this.amount);
+                    }
+                } 
                 expenses.push(newItem);
                 this.name = "";
                 this.description = "";
@@ -92,3 +118,19 @@ const form = new Vue({
         },
     }
 });
+
+const categorySection = new Vue({
+    el: '.category-wrapper',
+    data: {
+        categoriesList: categories,
+    },
+    methods: {
+        add(category, amount) {
+            for (let i = 0; i < this.categoriesList.length; i++) {
+                if (this.categoriesList[i].name == category) {
+                    this.categoriesList[i].spending += parseFloat(amount);
+                }
+            }
+        }
+    }
+}) 
