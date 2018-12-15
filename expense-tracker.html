@@ -31,22 +31,27 @@
         <!-- Main Start -->
         <div class = "main">
             <!-- Category Section Start-->
-            <div class = "category-wrapper">
-                <div v-for="category in categoriesList" v-bind:style = "{backgroundColor: category.color}">
-                    <p>{{ category.name }}</p>
-                    <p>{{ "$" + category.spending }}</p>
+            <div class = "category-wrapper" >
+                <div v-for="category in categoriesList"  v-on:click="focusCategory" v-bind:style = "{backgroundColor: category.color}" v-bind:class="category.name">
+                    <p v-bind:class="category.name">{{ category.name }}</p>
+                    <p v-bind:class="category.name">{{ "$" + category.spending }}</p>
                 </div>
             </div>
             <!-- Category Section End -->
             <!-- Expense Table Start -->
             <div class ="expense-section">
             <div class = "expense-table">
-                <h1>{{ title }}</h1>
-                
-                                
+                <div class = "expense-header">
+                    <h1>{{ title }}</h1>
+            
+                    <div class = "add-btn" v-on:click = "triggerForm">
+                        <div>{{ content }}</div>
+                    </div>             
+                </div>
+                   
                 <!-- Expenses Start -->
                 <div>
-                    <div class = "expense-wrapper" v-for="expense in expensesList"  v-on:click = "toggleDetails(expense)">
+                    <div class = "expense-wrapper" v-for="expense in expensesList"  v-on:click = "toggleDetails(expense)" v-bind:class = "{highlight: expense.categoryClicked, nohighlight: !expense.categoryClicked}">
                         <div class = "expense-content-left">
                             <p class = "expense-name">{{ expense.name }}</p>
                             <p class = "expense-description" v-show = "expense.showDetail">{{ expense.description }}</p>
@@ -60,9 +65,7 @@
             </div>
             <!-- Expenses End - -->
             
-            <div class = "add-btn" v-on:click = "triggerForm">
-                <div>{{ content }}</div>
-            </div>
+            
             
 
             </div>
@@ -82,7 +85,7 @@
                         </div>
 
                         <div>
-                            <label for = "expense-type-menu">Pick a Category</label>
+                            <label for = "expense-type-menu">Category</label>
                             <select id = "expense-type-menu" name = "type" v-model = "type">
                                 <option selected = "selected" disabled>Category</option>
                                 <option v-for = "category in categories">{{ category.name }}</option>

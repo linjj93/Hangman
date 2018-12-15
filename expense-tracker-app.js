@@ -1,4 +1,37 @@
-const expenses = [];
+const expenses = [
+    {
+        name: "Item 1",
+        description: "Description here",
+        amount: "$90",
+        type: "F&B",
+        showDetail: false,
+        categoryClicked: false
+    },
+    {
+        name: "Item 2",
+        description: "Description here",
+        amount: "$10",
+        type: "Shopping",
+        showDetail: false,
+        categoryClicked: false
+    },
+    {
+        name: "Item 3",
+        description: "Description here",
+        amount: "$50",
+        type: "Leisure",
+        showDetail: false,
+        categoryClicked: false
+    },
+    {
+        name: "Item 4",
+        description: "Description here",
+        amount: "$35",
+        type: "Leisure",
+        showDetail: false,
+        categoryClicked: false
+    }
+];
 
 const categories = [
     {
@@ -20,6 +53,11 @@ const categories = [
         name: "Others",
         spending: 0,
         color: "green"
+    },
+    {
+        name: "Total",
+        spending: 0,
+        color: "black"
     }
 ];
 
@@ -27,29 +65,25 @@ const app = new Vue({
     el: '.expense-table',
     data: {
         title: 'Expense Tracker',
-        expensesList: expenses
+        expensesList: expenses,
+        content: 'Add Expense'
     },
     methods: {
         toggleDetails(expense) {
             expense.showDetail = !expense.showDetail;     
-        }
-    }
-});
-
-
-const addExpenseButton = new Vue({
-    el: '.add-btn',
-    data: {
-        content: 'Add Expense'
-    },
-    methods: {
+        },
         triggerForm() {
             form.formTriggered = !form.formTriggered;
             $(".expense-wrapper").css("opacity", "0.2");
             $(".add-btn").css("opacity", "0.2");
+            $(".category-wrapper").hide();
+            $(".expense-section").hide();
+            $(".topnav").hide();
         }
     }
 });
+
+
 
 
 const form = new Vue({
@@ -71,6 +105,9 @@ const form = new Vue({
             this.formTriggered = !this.formTriggered;
             $(".expense-wrapper").css("opacity", "1");
             $(".add-btn").css("opacity", "1");
+            $(".category-wrapper").show();
+            $(".expense-section").show();
+            $(".topnav").show();
         },
 
         isIncomplete() {
@@ -100,7 +137,8 @@ const form = new Vue({
                     description: this.description,
                     amount: "$" + this.amount,
                     type: this.type,
-                    showDetail: false
+                    showDetail: false,
+                    categoryClicked: false
                 };
                 for (let i = 0; i < categorySection.categoriesList.length; i++) {
                     console.log(categorySection.categoriesList[i].name);
@@ -129,6 +167,24 @@ const categorySection = new Vue({
             for (let i = 0; i < this.categoriesList.length; i++) {
                 if (this.categoriesList[i].name == category) {
                     this.categoriesList[i].spending += parseFloat(amount);
+                }
+            }
+        },
+
+        deduct(category, amount) {
+            for (let i = 0; i < this.categoriesList.length; i++) {
+                if (this.categoriesList[i].name == category) {
+                    this.categoriesList[i].spending -= parseFloat(amount);
+                }
+            }
+        },
+
+        focusCategory(event) {
+            const list = app.expensesList;
+            for (let i = 0; i < list.length; i++) {
+                list[i].categoryClicked = false;
+                if (event.target.className == list[i].type) {
+                    list[i].categoryClicked = true;
                 }
             }
         }
