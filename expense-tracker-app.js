@@ -105,9 +105,11 @@ const form = new Vue({
             this.formTriggered = !this.formTriggered;
             $(".expense-wrapper").css("opacity", "1");
             $(".add-btn").css("opacity", "1");
-            $(".category-wrapper").show();
             $(".expense-section").show();
             $(".topnav").show();
+            if (window.matchMedia("only screen and (min-width: 769px)").matches) {
+                $(".category-wrapper").show();
+            }
         },
 
         isIncomplete() {
