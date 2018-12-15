@@ -36,13 +36,17 @@
                     <p v-bind:class="category.name">{{ category.name }}</p>
                     <p v-bind:class="category.name">{{ "$" + category.spending }}</p>
                 </div>
+                <div class = "total">
+                    <p>{{ totalHeader }}</p>
+                    <p>${{ totalSpending }}</p>
+                </div>
             </div>
             <!-- Category Section End -->
             <!-- Expense Table Start -->
             <div class ="expense-section">
             <div class = "expense-table">
                 <div class = "expense-header">
-                    <h1>{{ title }}</h1>
+                    <div>{{ title }}</div>
             
                     <div class = "add-btn" v-on:click = "triggerForm">
                         <div>{{ content }}</div>
@@ -51,21 +55,25 @@
                    
                 <!-- Expenses Start -->
                 <div>
-                    <div class = "expense-wrapper" v-for="expense in expensesList"  v-on:click = "toggleDetails(expense)" v-bind:class = "{highlight: expense.categoryClicked, nohighlight: !expense.categoryClicked}">
+                    <div class = "expense-wrapper" v-for="(expense, index) in expensesList"  v-on:click = "toggleDetails(expense)" v-bind:class = "{highlight: expense.categoryClicked, nohighlight: !expense.categoryClicked}">
                         <div class = "expense-content-left">
                             <p class = "expense-name">{{ expense.name }}</p>
                             <p class = "expense-description" v-show = "expense.showDetail">{{ expense.description }}</p>
                         </div>
                         <div class = "expense-content-right">
-                            <p class = "expense-amount">{{ expense.amount }}</p>
+                            <p class = "expense-amount">${{ expense.amount }}</p>
                             <p class = "expense-type" v-show = "expense.showDetail">{{ expense.type }}</p>
                         </div>
                         <div class = "update">
-                            <img class = "icon" src = "images/SVGs/edit.svg">
-                            <img class = "icon" src = "images/SVGs/delete.svg">
+                            <img v-on:click = "editEntry(index); storeIndex(index)" src = "images/SVGs/edit.svg">
+                            <img v-on:click = "deleteEntry(index)" src = "images/SVGs/delete.svg">
                         </div>
                     </div>
                 </div>
+
+
+
+                
             </div>
             <!-- Expenses End - -->
             

@@ -1,37 +1,39 @@
 const expenses = [
-    {
-        name: "Item 1",
-        description: "Description here",
-        amount: "$90",
-        type: "F&B",
-        showDetail: false,
-        categoryClicked: false
-    },
-    {
-        name: "Item 2",
-        description: "Description here",
-        amount: "$10",
-        type: "Shopping",
-        showDetail: false,
-        categoryClicked: false
-    },
-    {
-        name: "Item 3",
-        description: "Description here",
-        amount: "$50",
-        type: "Leisure",
-        showDetail: false,
-        categoryClicked: false
-    },
-    {
-        name: "Item 4",
-        description: "Description here",
-        amount: "$35",
-        type: "Leisure",
-        showDetail: false,
-        categoryClicked: false
-    }
+    // dummy expenses for testing when needed
+    // {
+    //     name: "Item 1",
+    //     description: "Description here",
+    //     amount: 90,
+    //     type: "F&B",
+    //     showDetail: false,
+    //     categoryClicked: false
+    // },
+    // {
+    //     name: "Item 2",
+    //     description: "Description here",
+    //     amount: 10,
+    //     type: "Shopping",
+    //     showDetail: false,
+    //     categoryClicked: false
+    // },
+    // {
+    //     name: "Item 3",
+    //     description: "Description here",
+    //     amount: 50,
+    //     type: "Leisure",
+    //     showDetail: false,
+    //     categoryClicked: false
+    // },
+    // {
+    //     name: "Item 4",
+    //     description: "Description here",
+    //     amount: 35,
+    //     type: "Leisure",
+    //     showDetail: false,
+    //     categoryClicked: false
+    // }
 ];
+
 
 const categories = [
     {
@@ -54,11 +56,7 @@ const categories = [
         spending: 0,
         color: "green"
     },
-    {
-        name: "Total",
-        spending: 0,
-        color: "black"
-    }
+
 ];
 
 const app = new Vue({
@@ -79,10 +77,34 @@ const app = new Vue({
             $(".category-wrapper").hide();
             $(".expense-section").hide();
             $(".topnav").hide();
+        },
+        deleteEntry(index) {
+            const answer = confirm("Confirm deletion?");
+            if (answer) {
+                const categoryToDelete = this.expensesList[index].type;
+                const amountToDelete = this.expensesList[index].amount;
+                categorySection.deduct(categoryToDelete, amountToDelete);
+                this.expensesList.splice(index, 1);
+            }
+        },
+        editEntry(index) {
+            const itemToEdit = this.expensesList[index];
+            const categoryToDelete = this.expensesList[index].type;
+            const amountToDelete = this.expensesList[index].amount;
+            categorySection.deduct(categoryToDelete, amountToDelete);
+            this.expensesList.splice(index, 1);
+            form.editMode = true;
+            this.triggerForm();
+            form.name = itemToEdit.name;
+            form.amount = itemToEdit.amount;
+            form.description = itemToEdit.description;
+            form.type = itemToEdit.type;
+        },
+        storeIndex(index) {
+            return index;
         }
     }
 });
-
 
 
 
@@ -98,6 +120,7 @@ const form = new Vue({
         description: '',
         type: '',
         categories: categories,
+        editMode: false
 
     },
     methods: {
@@ -134,21 +157,29 @@ const form = new Vue({
             } else if (this.isNotNumber(this.amount)) {
                 alert("Your expense amount is invalid!");
             } else {
-                const newItem = {
-                    name: this.name,
-                    description: this.description,
-                    amount: "$" + this.amount,
-                    type: this.type,
-                    showDetail: false,
-                    categoryClicked: false
-                };
-                for (let i = 0; i < categorySection.categoriesList.length; i++) {
-                    console.log(categorySection.categoriesList[i].name);
-                    if (categorySection.categoriesList[i].name == this.type) {
-                        categorySection.add(this.type, this.amount);
-                    }
-                } 
-                expenses.push(newItem);
+                if (this.editMode) {
+                    const edittedItem = {
+                        name: this.name,
+                        description: this.description,
+                        amount: parseFloat(this.amount),
+                        type: this.type,
+                        showDetail: false,
+                        categoryClicked: false
+                    };
+                    expenses.splice(app.storeIndex(), 0, edittedItem);
+                    this.editMode = false;
+                } else {
+                    const newItem = {
+                        name: this.name,
+                        description: this.description,
+                        amount: parseFloat(this.amount),
+                        type: this.type,
+                        showDetail: false,
+                        categoryClicked: false
+                    };
+                    expenses.push(newItem);
+                };                
+                categorySection.add(this.type, this.amount)
                 this.name = "";
                 this.description = "";
                 this.amount = "";
@@ -163,6 +194,16 @@ const categorySection = new Vue({
     el: '.category-wrapper',
     data: {
         categoriesList: categories,
+        totalHeader: "Total"
+    },
+    computed: {
+        totalSpending() {
+            let final = 0;
+            for (let i = 0; i < app.expensesList.length; i++) {
+                final += app.expensesList[i].amount;
+            }
+            return final;
+        }
     },
     methods: {
         add(category, amount) {

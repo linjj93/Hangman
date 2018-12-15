@@ -115,10 +115,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.add-btn {
-    flex-basis: 50%;
+    margin-bottom: 2%;
 }
 
 .expense-content-left, .expense-content-right {
@@ -155,12 +152,12 @@ body {
 .add-btn {
     background: #313D49;
     border-radius: 1rem;
-    box-shadow: 5px 5px black; 
-    margin-bottom: 2%;
+    box-shadow: 5px 5px black;
     padding: 2%;
     font-size: 1em;
     color: white;
     text-align: center;
+    flex-basis: 50%;
 }
 
 .add-btn:hover {
@@ -196,6 +193,7 @@ body {
 .form-header {
     display: flex;
     justify-content: space-between;
+    font-size: 1em;
 }
 
 .form-header span {
@@ -211,8 +209,6 @@ body {
 .form-top {
     display: flex;
     justify-content: space-between;
-    
-    
 }
 
 input, select {
@@ -221,6 +217,10 @@ input, select {
     background: #313D49;
     border: solid 1px white;
     color: white;
+}
+
+input {
+    padding: 0.1em;
 }
 
 select {
@@ -295,11 +295,17 @@ input[type="text"]:focus {
     }
 
     .category-wrapper div:last-child {
+        background-color: black;
         color: white;
+        box-shadow: -5px 5px grey;
     }
 
     .expense-section {
         margin-left: 15%;
+    }
+
+    .expense-header {
+        font-size: 1.5em;
     }
 
     .update {
@@ -328,12 +334,23 @@ input[type="text"]:focus {
         transform: translateX(10px);
     }
 
+    .expense-wrapper:hover p {
+        transform: rotate(1turn);
+    }
+
 
     .highlight {
         font-weight: bold;
     }
 
+    .form-header, input, select {
+        font-size: 1.5em;
+    }
 
+    #new-expense-amount {
+        margin-top: 0;
+        width: 75%;
+    }
 
 
 
