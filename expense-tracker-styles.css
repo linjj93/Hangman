@@ -128,7 +128,7 @@ body {
 }
 
 .expense-content-left {
-    flex: 3;
+    flex: 4;
 }
 
 .expense-content-right {
@@ -137,7 +137,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
+.update {
+    display: none;
 }
 
 .expense-amount, .expense-name {
@@ -215,7 +218,6 @@ body {
 input, select {
     display: block;
     font-size: 1em;
-    padding: 0.5rem;
     background: #313D49;
     border: solid 1px white;
     color: white;
@@ -240,13 +242,12 @@ input[type="text"]:focus {
     border-color: lime;
 }
 
-.form-top select::before {
-    content: "Category:";
-}
 
 #new-expense-amount {
     margin-top: 0;
+    width: 50%;
 }
+
 
 @media only screen and (min-width: 769px) {
     body, html {
@@ -300,6 +301,33 @@ input[type="text"]:focus {
     .expense-section {
         margin-left: 15%;
     }
+
+    .update {
+        display: block;
+        opacity: 0;
+        left: 80%;
+        position: absolute;
+        transition-property: opacity, left;
+        transition-duration: 1s;
+        transition-delay: .2s;
+        transition-timing-function: ease-out;
+        padding: .1% .1%;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;    
+    }
+
+    .expense-wrapper:hover .update{
+        left: 92%;
+        opacity: 1;
+    }
+
+    .expense-wrapper:hover {
+        transform: translateX(10px);
+    }
+
 
     .highlight {
         font-weight: bold;
