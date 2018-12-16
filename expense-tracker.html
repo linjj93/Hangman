@@ -44,87 +44,87 @@
             <!-- Category Section End -->
             <!-- Expense Table Start -->
             <div class ="expense-section">
-            <div class = "expense-table">
-                <div class = "expense-header">
-                    <div>{{ title }}</div>
-            
-                    <div class = "add-btn" v-on:click = "triggerForm">
-                        <div>{{ content }}</div>
-                    </div>             
+                <div class = "expense-table">
+                    <div class = "expense-header">
+                        <div>{{ title }}</div>
+                
+                        <div class = "add-btn" v-on:click = "triggerForm">
+                            <div>{{ content }}</div>
+                        </div>             
+                    </div>
+                    
+                    <!-- Expenses Start -->
+                    <div>
+                        <div class = "expense-wrapper" v-for="(expense, index) in expensesList"  v-on:click = "toggleDetails(expense)" v-bind:class = "{highlight: expense.categoryClicked, nohighlight: !expense.categoryClicked}">
+                            <div class = "expense-content-left">
+                                <p class = "expense-name">{{ expense.name }}</p>
+                                <p class = "expense-description" v-show = "expense.showDetail">{{ expense.description }}</p>
+                            </div>
+                            <div class = "expense-content-right">
+                                <p class = "expense-amount">${{ expense.amount }}</p>
+                                <p class = "expense-type" v-show = "expense.showDetail">{{ expense.type }}</p>
+                            </div>
+                            <div class = "update">
+                                <img v-on:click = "editEntry(index)" src = "images/SVGs/edit.svg">
+                                <img v-on:click = "deleteEntry(index)" src = "images/SVGs/delete.svg">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
                 </div>
-                   
-                <!-- Expenses Start -->
-                <div>
-                    <div class = "expense-wrapper" v-for="(expense, index) in expensesList"  v-on:click = "toggleDetails(expense)" v-bind:class = "{highlight: expense.categoryClicked, nohighlight: !expense.categoryClicked}">
-                        <div class = "expense-content-left">
-                            <p class = "expense-name">{{ expense.name }}</p>
-                            <p class = "expense-description" v-show = "expense.showDetail">{{ expense.description }}</p>
-                        </div>
-                        <div class = "expense-content-right">
-                            <p class = "expense-amount">${{ expense.amount }}</p>
-                            <p class = "expense-type" v-show = "expense.showDetail">{{ expense.type }}</p>
-                        </div>
-                        <div class = "update">
-                            <img v-on:click = "editEntry(index); storeIndex(index)" src = "images/SVGs/edit.svg">
-                            <img v-on:click = "deleteEntry(index)" src = "images/SVGs/delete.svg">
-                        </div>
-                    </div>
+                <!-- Expenses End - -->
+                
+                
+                
+
                 </div>
 
+                <div class = "form" id ="popup" v-show = "formTriggered">
 
 
-                
-            </div>
-            <!-- Expenses End - -->
-            
-            
-            
-
-            </div>
-
-            <div class = "form" id ="popup" v-show = "formTriggered">
-
-
-                    <div class = "form-header">
-                        <h2>{{ title }}</h2>
-                        <span v-on:click = "closeForm">{{ cross }}</span>
-                    </div>
-                        
-                    <div class = "form-top">
-                        <div>
-                            <label for = "new-expense-amount">Amount Spent (in $)</label>
-                            <input type="text" id="new-expense-amount" name = "amount" v-model = "amount"/>
+                        <div class = "form-header">
+                            <h2>{{ title }}</h2>
+                            <span v-on:click = "closeForm">{{ cross }}</span>
                         </div>
+                            
+                        <div class = "form-top">
+                            <div>
+                                <label for = "new-expense-amount">Amount Spent (in $)</label>
+                                <input type="text" id="new-expense-amount" name = "amount" v-model = "amount"/>
+                            </div>
 
-                        <div>
-                            <label for = "expense-type-menu">Category</label>
-                            <select id = "expense-type-menu" name = "type" v-model = "type">
-                                <option selected = "selected" disabled>Category</option>
-                                <option v-for = "category in categories">{{ category.name }}</option>
-                            </select>
+                            <div>
+                                <label for = "expense-type-menu">Category</label>
+                                <select id = "expense-type-menu" name = "type" v-model = "type">
+                                    <option selected = "selected" disabled>Category</option>
+                                    <option v-for = "category in categories">{{ category.name }}</option>
+                                </select>
+                            </div>
+                            
                         </div>
-                        
-                    </div>
-                    <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
-                    <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>
-                    <button type = "submit" id = "save-btn" v-on:click="addNewExpense">{{ save }}</button>
-            </div>
-            
-            
-            
-            
-            
-            
-            <!-- Input Form -->
-            
+                        <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
+                        <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>
+                        <button type = "submit" id = "save-btn" v-on:click="addNewExpense">{{ save }}</button>
+                </div>
                 
                 
                 
-                <!-- 
-                    Add Interactivity
-                    Calculate Total
-                    Do Category Breakdown           
-                -->
+                
+                
+                
+                <!-- Input Form -->
+                
+                    
+                    
+                    
+                    <!-- 
+                        Add Interactivity
+                        Calculate Total
+                        Do Category Breakdown           
+                    -->
             </div>
         </div>
         <script

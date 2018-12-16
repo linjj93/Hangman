@@ -6,7 +6,8 @@ const expenses = [
     //     amount: 90,
     //     type: "F&B",
     //     showDetail: false,
-    //     categoryClicked: false
+    //     categoryClicked: false,
+    //     id: 1
     // },
     // {
     //     name: "Item 2",
@@ -14,7 +15,8 @@ const expenses = [
     //     amount: 10,
     //     type: "Shopping",
     //     showDetail: false,
-    //     categoryClicked: false
+    //     categoryClicked: false,
+    //     id: 2
     // },
     // {
     //     name: "Item 3",
@@ -22,7 +24,8 @@ const expenses = [
     //     amount: 50,
     //     type: "Leisure",
     //     showDetail: false,
-    //     categoryClicked: false
+    //     categoryClicked: false,
+    //     id: 3
     // },
     // {
     //     name: "Item 4",
@@ -30,9 +33,12 @@ const expenses = [
     //     amount: 35,
     //     type: "Leisure",
     //     showDetail: false,
-    //     categoryClicked: false
+    //     categoryClicked: false,
+    //     id: 4
     // }
 ];
+
+const itemCounter = expenses.length;
 
 
 const categories = [
@@ -64,7 +70,8 @@ const app = new Vue({
     data: {
         title: 'Expense Tracker',
         expensesList: expenses,
-        content: 'Add Expense'
+        content: 'Add Expense',
+        idBeingEditted: null
     },
     methods: {
         toggleDetails(expense) {
@@ -91,6 +98,7 @@ const app = new Vue({
             const itemToEdit = this.expensesList[index];
             const categoryToDelete = this.expensesList[index].type;
             const amountToDelete = this.expensesList[index].amount;
+            this.idBeingEditted = this.expensesList[index].id;
             categorySection.deduct(categoryToDelete, amountToDelete);
             this.expensesList.splice(index, 1);
             form.editMode = true;
@@ -100,9 +108,7 @@ const app = new Vue({
             form.description = itemToEdit.description;
             form.type = itemToEdit.type;
         },
-        storeIndex(index) {
-            return index;
-        }
+
     }
 });
 
@@ -121,10 +127,24 @@ const form = new Vue({
         type: '',
         categories: categories,
         editMode: false
-
     },
     methods: {
-        closeForm() {      
+        closeForm() {
+            if (this.editMode) {
+                const edittedItem = {
+                    name: this.name,
+                    description: this.description,
+                    amount: parseFloat(this.amount),
+                    type: this.type,
+                    showDetail: false,
+                    categoryClicked: false,
+                    id: app.idBeingEditted
+                };
+                expenses.splice(app.idBeingEditted - 1, 0, edittedItem);
+                this.editMode = false;
+                app.idBeingEditted = null;
+                categorySection.add(this.type, this.amount);
+            }
             this.formTriggered = !this.formTriggered;
             $(".expense-wrapper").css("opacity", "1");
             $(".add-btn").css("opacity", "1");
@@ -164,10 +184,12 @@ const form = new Vue({
                         amount: parseFloat(this.amount),
                         type: this.type,
                         showDetail: false,
-                        categoryClicked: false
+                        categoryClicked: false,
+                        id: app.idBeingEditted
                     };
-                    expenses.splice(app.storeIndex(), 0, edittedItem);
+                    expenses.splice(app.idBeingEditted - 1, 0, edittedItem);
                     this.editMode = false;
+                    app.idBeingEditted = null;
                 } else {
                     const newItem = {
                         name: this.name,
@@ -179,7 +201,7 @@ const form = new Vue({
                     };
                     expenses.push(newItem);
                 };                
-                categorySection.add(this.type, this.amount)
+                categorySection.add(this.type, this.amount);
                 this.name = "";
                 this.description = "";
                 this.amount = "";
