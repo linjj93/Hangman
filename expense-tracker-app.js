@@ -70,7 +70,8 @@ const app = new Vue({
     data: {
         title: 'Expense Tracker',
         expensesList: expenses,
-        content: 'Add Expense',
+        addExpenseButton: 'Add Expense',
+        expenseSummaryButton: 'Summary',
         idBeingEditted: null
     },
     methods: {
@@ -79,6 +80,14 @@ const app = new Vue({
         },
         triggerForm() {
             form.formTriggered = !form.formTriggered;
+            $(".expense-wrapper").css("opacity", "0.2");
+            $(".add-btn").css("opacity", "0.2");
+            $(".category-wrapper").hide();
+            $(".expense-section").hide();
+            $(".topnav").hide();
+        },
+        triggerSummary() {
+            categoryBreakdown.summaryTriggered = !categoryBreakdown.summaryTriggered;
             $(".expense-wrapper").css("opacity", "0.2");
             $(".add-btn").css("opacity", "0.2");
             $(".category-wrapper").hide();
@@ -115,7 +124,7 @@ const app = new Vue({
 
 
 const form = new Vue({
-    el: '.form',
+    el: '#form',
     data: {
         formTriggered: false,
         title: "Add New Expense",
@@ -255,3 +264,39 @@ const categorySection = new Vue({
         }
     }
 }) 
+
+
+const categoryBreakdown = new Vue({
+    el: '#category-breakdown',
+    data: {
+        summaryTriggered: false,
+        title: "Expenditure Summary",
+        cross: "X",
+        close: "Close",
+        categories: categories,
+        income: null
+    },
+    computed: {
+        savings() {
+            return this.income - categorySection.totalSpending; 
+        },
+        percentageOfIncome() {
+            return 100*(this.savings/this.income);
+        }
+    },
+    methods: {
+        closeForm() {
+            this.summaryTriggered = !this.summaryTriggered;
+            $(".expense-wrapper").css("opacity", "1");
+            $(".add-btn").css("opacity", "1");
+            $(".expense-section").show();
+            $(".topnav").show();
+            if (window.matchMedia("only screen and (min-width: 769px)").matches) {
+                $(".category-wrapper").show();
+            }
+        }
+    }
+});
+
+
+            

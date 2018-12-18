@@ -97,6 +97,20 @@ body {
 
 /* Table Styles */ 
 
+.expense-table h1 {
+    margin: 1% 0;
+    text-align: center;
+}
+
+
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+
 .expense-wrapper p {
     margin: 0;
 }
@@ -111,12 +125,6 @@ body {
     font-size: 1em;
 }
 
-.expense-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2%;
-}
 
 .expense-content-left, .expense-content-right {
     display: flex;
@@ -149,25 +157,24 @@ body {
     flex: 1;
 }
 
-.add-btn {
+.btn {
     background: #313D49;
     border-radius: 1rem;
     box-shadow: 5px 5px black;
     padding: 2%;
-    font-size: 1em;
     color: white;
     text-align: center;
-    flex-basis: 50%;
+    flex-basis: 45%;
 }
 
-.add-btn:hover {
+.btn:hover {
     color: #313D49;
     background: aqua;
     transition: 0.2s ease-in-out;
 }
 
 
-.form {
+.popup {
     display: flex;
     flex-direction: column;
     background: #313D49;
@@ -185,7 +192,7 @@ body {
     color: white;
 }
 
-.form h2 {
+.popup h2 {
     margin: 0;
     font-size: 1em;
 }
@@ -213,7 +220,6 @@ body {
 
 input, select {
     display: block;
-    font-size: 1em;
     background: #313D49;
     border: solid 1px white;
     color: white;
@@ -246,6 +252,69 @@ input[type="text"]:focus {
 #new-expense-amount {
     margin-top: 0;
     width: 50%;
+}
+
+#category-breakdown {
+    display: flex;
+    padding: 5%;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.breakdown-header span:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.summary-category-wrapper, .income, .savings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+
+.income input {
+    display: block;
+    flex: 3;
+    min-width: 0;
+    height: 2.5em;
+    text-align: center;
+}
+
+.summary-category-wrapper p:first-child {
+    flex: 2;
+    padding: 5%;
+    border-radius: 2%;
+    border: 1px solid lightgrey;
+    color: black;
+    font-weight: bold;
+}
+
+.summary-category-wrapper p:nth-child(2) {
+    flex: 3;
+    text-align: center;
+    padding: 5%;
+}
+
+
+.savings p:first-child {
+    flex: 2;
+    padding: 5%;
+    border-radius: 2%;
+    border: 1px solid lightgrey;
+    color: white;
+    font-weight: bold;
+}
+
+.savings p:nth-child(2) {
+    flex: 3;
+    text-align: center;
+    padding: 5%;
 }
 
 

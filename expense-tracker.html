@@ -45,11 +45,15 @@
             <!-- Expense Table Start -->
             <div class ="expense-section">
                 <div class = "expense-table">
+                    <h1>{{ title }}</h1>
                     <div class = "expense-header">
-                        <div>{{ title }}</div>
+                      
+                        <div class = "btn" v-on:click = "triggerForm">
+                            <div>{{ addExpenseButton }}</div>
+                        </div>        
                 
-                        <div class = "add-btn" v-on:click = "triggerForm">
-                            <div>{{ content }}</div>
+                        <div class = "btn" v-on:click = "triggerSummary">
+                            <div>{{ expenseSummaryButton }}</div>
                         </div>             
                     </div>
                     
@@ -82,49 +86,61 @@
 
                 </div>
 
-                <div class = "form" id ="popup" v-show = "formTriggered">
+                <div id = "form" class ="popup" v-show = "formTriggered">
 
 
-                        <div class = "form-header">
-                            <h2>{{ title }}</h2>
-                            <span v-on:click = "closeForm">{{ cross }}</span>
+                    <div class = "form-header">
+                        <h2>{{ title }}</h2>
+                        <span v-on:click = "closeForm">{{ cross }}</span>
+                    </div>
+                        
+                    <div class = "form-top">
+                        <div>
+                            <label for = "new-expense-amount">Amount Spent (in $)</label>
+                            <input type="text" id="new-expense-amount" name = "amount" v-model = "amount"/>
                         </div>
-                            
-                        <div class = "form-top">
-                            <div>
-                                <label for = "new-expense-amount">Amount Spent (in $)</label>
-                                <input type="text" id="new-expense-amount" name = "amount" v-model = "amount"/>
-                            </div>
 
-                            <div>
-                                <label for = "expense-type-menu">Category</label>
-                                <select id = "expense-type-menu" name = "type" v-model = "type">
-                                    <option selected = "selected" disabled>Category</option>
-                                    <option v-for = "category in categories">{{ category.name }}</option>
-                                </select>
-                            </div>
-                            
+                        <div>
+                            <label for = "expense-type-menu">Category</label>
+                            <select id = "expense-type-menu" name = "type" v-model = "type">
+                                <option selected = "selected" disabled>Category</option>
+                                <option v-for = "category in categories">{{ category.name }}</option>
+                            </select>
                         </div>
-                        <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
-                        <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>
-                        <button type = "submit" id = "save-btn" v-on:click="addNewExpense">{{ save }}</button>
+                        
+                    </div>
+                    <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
+                    <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>
+                    <button type = "submit" id = "save-btn" v-on:click="addNewExpense">{{ save }}</button>
+                </div>
+                
+                <div id = "category-breakdown" class = "popup" v-show="summaryTriggered">
+
+                    <div class = "breakdown-header">
+                        <h2>{{ title }}</h2>
+                        <span v-on:click = "closeForm">{{ cross }}</span>
+                    </div>
+                    
+                    <div class="income">
+                        <input type="number" v-model="income" placeholder="Your Income"/>
+                    </div>
+                    
+                    <div v-for="category in categories" class = "summary-category-wrapper">
+                        <p v-bind:style={backgroundColor:category.color}>{{ category.name }}</p>
+                        <p>${{ category.spending }}</p>
+                    </div>
+
+                    <div class="savings">
+                        <p>You Saved</p>
+                        <p>${{ savings }}</p>
+                    </div>            
+
                 </div>
                 
                 
                 
                 
                 
-                
-                <!-- Input Form -->
-                
-                    
-                    
-                    
-                    <!-- 
-                        Add Interactivity
-                        Calculate Total
-                        Do Category Breakdown           
-                    -->
             </div>
         </div>
         <script
