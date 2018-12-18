@@ -145,7 +145,12 @@ body {
 }
 
 .update {
-    display: none;
+    display: block;
+}
+
+img {
+    width: 30px;
+    height: 30px;    
 }
 
 .expense-amount, .expense-name {
@@ -288,7 +293,7 @@ input[type="text"]:focus {
 
 .summary-category-wrapper p:first-child {
     flex: 2;
-    padding: 5%;
+    padding: 2%;
     border-radius: 2%;
     border: 1px solid lightgrey;
     color: black;
@@ -298,13 +303,13 @@ input[type="text"]:focus {
 .summary-category-wrapper p:nth-child(2) {
     flex: 3;
     text-align: center;
-    padding: 5%;
+    padding: 2%;
 }
 
 
 .savings p:first-child {
     flex: 2;
-    padding: 5%;
+    padding: 2%;
     border-radius: 2%;
     border: 1px solid lightgrey;
     color: white;
@@ -314,7 +319,7 @@ input[type="text"]:focus {
 .savings p:nth-child(2) {
     flex: 3;
     text-align: center;
-    padding: 5%;
+    padding: 2%;
 }
 
 
