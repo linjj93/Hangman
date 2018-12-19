@@ -46,8 +46,8 @@
             <div class ="expense-section">
                 <div class = "expense-table">
                     <h1>{{ title }}</h1>
+
                     <div class = "expense-header">
-                      
                         <div class = "btn" v-on:click = "triggerForm">
                             <div>{{ addExpenseButton }}</div>
                         </div>        
@@ -73,23 +73,13 @@
                                 <img v-on:click = "deleteEntry(index)" src = "images/SVGs/delete.svg">
                             </div>
                         </div>
-                    </div>
-
-
-
-                    
+                    </div>                  
                 </div>
                 <!-- Expenses End - -->
-                
-                
-                
-
                 </div>
 
-                <div id = "form" class ="popup" v-show = "formTriggered">
-
-
-                    <div class = "form-header">
+                <div id="form" class="popup" v-show="formTriggered">
+                    <div class="form-header">
                         <h2>{{ title }}</h2>
                         <span v-on:click = "closeForm">{{ cross }}</span>
                     </div>
@@ -107,7 +97,6 @@
                                 <option v-for = "category in categories">{{ category.name }}</option>
                             </select>
                         </div>
-                        
                     </div>
                     <input type="text" id="new-expense-name" name = "name" placeholder ="Insert New Expense" v-model = "name"/>
                     <input type="text" id="new-expense-description" name = "description" placeholder ="Description" v-model = "description"/>
@@ -134,13 +123,7 @@
                         <p>You Saved</p>
                         <p>${{ savings }}</p>
                     </div>            
-
-                </div>
-                
-                
-                
-                
-                
+                </div>        
             </div>
         </div>
         <script

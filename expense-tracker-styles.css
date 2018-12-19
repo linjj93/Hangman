@@ -182,8 +182,8 @@ img {
 .popup {
     display: flex;
     flex-direction: column;
-    background: #313D49;
     justify-content: space-around;
+    background: #313D49;
     height: 75%;
     position: fixed;
     padding: 0 1em;
@@ -196,6 +196,7 @@ img {
     box-shadow: 0 0 5px 7.5px lightgrey; 
     color: white;
 }
+
 
 .popup h2 {
     margin: 0;
@@ -228,10 +229,15 @@ input, select {
     background: #313D49;
     border: solid 1px white;
     color: white;
+    height: 2.5em;
 }
 
 input {
     padding: 0.1em;
+}
+
+.hide-form-on-keyboard {
+    z-index: -1;
 }
 
 select {

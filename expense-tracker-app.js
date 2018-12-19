@@ -165,7 +165,7 @@ const form = new Vue({
         },
 
         isIncomplete() {
-            return (this.name == "" || this.description == "" || this.amount == "" || this.type == "")
+            return (this.amount == "" || this.type == "")
         }, 
         
         isNotNumber(ele) {
