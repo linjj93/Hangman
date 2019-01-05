@@ -157,11 +157,6 @@ h3 {
 
 .programme p:nth-child(2) {
     color: lightgrey;
-
-}
-
-.programme::after {
-    content: "~~~~~~~~~~~";
 }
 
 .dates {
