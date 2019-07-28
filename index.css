@@ -1,536 +1,539 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Work+Sans');
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Work+Sans");
 
 * {
-    font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
-
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .my-nav {
-    background-color: #333;
-    height: 7.5%;
-    width: 100%;
-    z-index: 1;
-    top: 0;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    position: fixed;
-    display: flex;
+  background-color: #333;
+  height: 7.5%;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  display: flex;
 }
 
-
-
-.my-nav a, .dropdown-heading {
-    display: inline-block;
-    color: #f2f2f2;
-    padding: 0;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    border-bottom: 5px solid #225fc1;
-    margin: 0;
+.my-nav a,
+.dropdown-heading {
+  display: inline-block;
+  color: #f2f2f2;
+  padding: 0;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 5px solid #225fc1;
+  margin: 0;
 }
 
-.my-nav h1, .my-nav p {
-    display: none;
+.my-nav h1,
+.my-nav p {
+  display: none;
 }
 
 .dropdown {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .dropdown-content {
-    display: none;
-    z-index: 10;
-    position: absolute;
-    top: 100%;
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 100%;
 
-    background: black;
-    text-decoration: none;
-
+  background: black;
+  text-decoration: none;
 }
 
 .dropdown-content a {
-    display: block;
-    color: #f2f2f2;
-    padding: 0 10px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    border-bottom: 5px solid #225fc1;
-    margin: 0;
+  display: block;
+  color: #f2f2f2;
+  padding: 0 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 5px solid #225fc1;
+  margin: 0;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-#intro, #learning {
-    display: none;
+#intro,
+#learning {
+  display: none;
 }
 
 .main-wrapper {
-    width: 100%;
+  width: 100%;
 }
 
 h2 {
-    text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 #about {
-    margin-top: 12.5%;
-    background: #bfbfbf;
-    border-radius: 0.5%;
-    padding: 5%;
-    text-align: justify;
-    box-shadow: 5px 5px;
-
+  margin-top: 12.5%;
+  background: #bfbfbf;
+  border-radius: 0.5%;
+  padding: 5%;
+  text-align: justify;
+  box-shadow: 5px 5px;
 }
 
 .python {
-    text-align: center;
+  text-align: center;
 }
 
 .python img {
-    width: 85%;
-    height: 85%;
-    border-radius: 1%;
+  width: 85%;
+  height: 85%;
+  border-radius: 1%;
 }
-
-
 
 .buttons {
-    display: none;
+  display: none;
 }
 
-.school, .work, .desc, .school-desc, .work-desc, #nus, #pku, #ocip, #internship, #psd, #roboto, .projects {
-    display: inline-block;
-    text-align: center;
-    font-size: 1rem;
+.school,
+.work,
+.desc,
+.school-desc,
+.work-desc,
+#nus,
+#thoughtworks,
+#pku,
+#ocip,
+#internship,
+#psd,
+#roboto,
+.projects {
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
 }
 
-.school, .work, .desc {
-    margin-bottom: 20px;
+.school,
+.work,
+.desc {
+  margin-bottom: 20px;
 }
 
 .school {
-    background: #333;
-    border-radius: 0.5%;
-    width: 100%;
-    color: white;
+  background: #333;
+  border-radius: 0.5%;
+  width: 100%;
+  color: white;
 }
-
 
 h3 {
-    text-align: center;
-    text-emphasis: bold;
+  text-align: center;
+  text-emphasis: bold;
 }
 
-.programme p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.programme p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .programme p:nth-child(2) {
-    color: lightgrey;
+  color: lightgrey;
 }
 
 .dates {
-    color: #225fc1;
-    font-weight: bold;
-    border-top: double 3px #333;
+  color: #225fc1;
+  font-weight: bold;
+  border-top: double 3px #333;
 }
 
 .desc-p p:nth-child(1) {
-    border: 5px ridge black;
+  border: 5px ridge black;
 }
 
 .content {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
-
 .overlay {
-    display: none;
+  display: none;
 }
 
 .projects {
-    border-radius: 0.5%;
-    width: 100%;
+  border-radius: 0.5%;
+  width: 100%;
 }
 
 .project-row-1 {
-    display: block;
+  display: block;
 }
 
 .image-wrapper {
-
-    display: block;
-    padding: auto;
-    text-align: center;
-    margin-bottom: 5%;
+  display: block;
+  padding: auto;
+  text-align: center;
+  margin-bottom: 5%;
 }
 
 .image-wrapper img {
-    margin: auto 10%;
-    height: 75%;
-    width: 75%;
-    border-radius: 2%;
-    box-shadow: 5px 5px black;
+  margin: auto 10%;
+  height: 75%;
+  width: 75%;
+  border-radius: 2%;
+  box-shadow: 5px 5px black;
 }
 
 @media only screen and (min-width: 769px) {
-    body {
-        margin: 0;
-    }
+  body {
+    margin: 0;
+  }
 
-    .start {
-        background-image: url("images/jeju-original.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 45rem;
-        margin: 0;
-        width: 100%;
- 
-    }
+  .start {
+    background-image: url("images/jeju-original.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    margin: 0;
+    width: 100%;
+  }
 
-    .my-nav {
-        background-color: #333;
-        height: 100%;
-        width: 20%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        color: white;
-        text-align: center;
-        font-family: 'Montserrat', sans-serif;
-        display: block;
-    }
+  .my-nav {
+    background-color: #333;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    display: block;
+  }
 
-    .my-nav h1, .my-nav p, #intro {
-        display: block;
-    }
-    
-    .my-nav a, .dropdown-heading {
-        display: block;
-        color: #f2f2f2;
-        padding: 15px;
-        text-decoration: none;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 500;
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        border-bottom: 5px solid #225fc1;
-        margin: 0 30px;
-        cursor: pointer;
-    }
+  .my-nav h1,
+  .my-nav p,
+  #intro {
+    display: block;
+  }
 
-    .dropdown-heading {
-        width: 100%;
-    }
-    
-    .my-nav a:hover, .dropdown-heading:hover {
-        color: lightblue;
-    }
-    
-    .dropdown {
-        position: relative;
-    }
-    
-    
-    .dropdown-content {
-        display: none;
-        z-index: 10;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        background: black;
-    }
-    
-    .dropdown-content a {
-        color: #f2f2f2;
-        padding: 15px;
-        text-decoration: none;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 300;
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        border-bottom: 5px solid #225fc1;
-        margin: 0;
-    }
-    
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+  .my-nav a,
+  .dropdown-heading {
+    display: block;
+    color: #f2f2f2;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    border-bottom: 5px solid #225fc1;
+    margin: 0 30px;
+    cursor: pointer;
+  }
 
-    .main-wrapper {
-        width: initial;
-        margin-left: 22%;
-    }
+  .dropdown-heading {
+    width: 100%;
+  }
 
-    #about {
-        margin-top: 2%;
-        margin-right: 1%;
-        padding: 3%;
-    }
+  .my-nav a:hover,
+  .dropdown-heading:hover {
+    color: lightblue;
+  }
 
-    .python img {
-        display: inline-block;
-        width: 40%;
-        height: 40%;
-        border-radius: 1%;
-    }
+  .dropdown {
+    position: relative;
+  }
 
-    .buttons {
-        display: block;
-    }
+  .dropdown-content {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: black;
+  }
 
-    #desc-btn, #school-btn, #work-btn {
-        width: 150px;
-        height: 150px;
-        background: black;
-        color: white;
-        -moz-border-radius: 25px;
-        -webkit-border-radius: 25px;
-        border-radius: 25px;
-        text-align: center;
-        padding: auto 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 5px auto;
-        transition-duration: 1s;
-    }
+  .dropdown-content a {
+    color: #f2f2f2;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    border-bottom: 5px solid #225fc1;
+    margin: 0;
+  }
 
-    @keyframes appear{
-        from{opacity: 0}
-        to{opacity: 1}
-    }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-    .desc, .school, .work {
-        animation: appear 1s ease-in-out;
-    }
+  .main-wrapper {
+    width: initial;
+    margin-left: 22%;
+  }
 
+  #about {
+    margin-top: 2%;
+    margin-right: 1%;
+    padding: 3%;
+  }
 
+  .python img {
+    display: inline-block;
+    width: 40%;
+    height: 40%;
+    border-radius: 1%;
+  }
 
-    .dynamic-portfolio {
-        display: flex;
-        padding-top: 40px;
-        min-height: 500px;
-    }
-    
-    .content {
-        flex: 3;
-        text-align: left;
-        margin-left: 2%;
-    }
+  .buttons {
+    display: block;
+  }
 
-    .desc {
-        display: flex;
-        flex-direction: column;
-        text-align: left; 
-        transition: 5s ease-in-out;
-    }
+  #desc-btn,
+  #school-btn,
+  #work-btn {
+    width: 150px;
+    height: 150px;
+    background: black;
+    color: white;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    text-align: center;
+    padding: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    transition-duration: 1s;
+  }
 
-    .buttons {
-        flex: 1;
+  @keyframes appear {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
 
-    .school {
-        transition: 5s ease-in-out;
-        background: white;
-        color: black;
-    }
+  .desc,
+  .school,
+  .work {
+    animation: appear 1s ease-in-out;
+  }
 
+  .dynamic-portfolio {
+    display: flex;
+    padding-top: 40px;
+    min-height: 500px;
+  }
 
-    
-    .school-desc {
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-        width: 700px;
-        flex-wrap: wrap;
-    }
-    
-    #nus, #pku, #ocip, #internship {
-        display: flex;
-        flex-basis: 100px;
-        justify-content: stretch;
-        flex-wrap: wrap;
-    }
-    
-    .programme {
-        flex: 3;
-        align-self: center;
-    }
-    
-    .programme p {
-        text-align: left;
-        justify-content: flex-start;
-    }
+  .content {
+    flex: 3;
+    text-align: left;
+    margin-left: 2%;
+  }
 
-    .programme::after {
-        content: none;
-    }
+  .desc {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: 5s ease-in-out;
+  }
 
-    .programme p:nth-child(2) {
-        color: darkgrey;
-    }
-    
-    .dates {
-        flex: 1;
-        align-self: center;
-        text-align: center;
-        border-top: none;
-    }
+  .buttons {
+    flex: 1;
+  }
 
-    .work {
-        transition: 5s ease-in-out;
-    }
+  .school {
+    transition: 5s ease-in-out;
+    background: white;
+    color: black;
+  }
 
-    .work h2, .school h2 {
-        text-align: left;
-    }
-    
-    .work-desc {
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-        align-items: center;
-        flex-wrap: wrap;
-    
-    }
-    
-    
-    
-    #psd, #roboto {
-        display: flex;
-        flex-basis: 200px;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    
-    .logo {
-        flex: 1;
-        align-self: center;
-        text-align: center;
-    }
-    
-    .desc-p {
-        flex: 3;
-        align-self: center;
-        text-align: justify;
-    }
+  .school-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    width: 700px;
+    flex-wrap: wrap;
+  }
 
-    .desc-p p:nth-child(1) {
-        text-align: center;
-    }
+  #nus,
+  #pku,
+  #ocip,
+  #internship {
+    display: flex;
+    flex-basis: 100px;
+    justify-content: stretch;
+    flex-wrap: wrap;
+  }
 
-    .project-row-1 {
-        display: flex;
-        justify-content: space-between;
-        margin: auto 5%;
-    }
+  .programme {
+    flex: 3;
+    align-self: center;
+  }
 
-    .image-wrapper {
-        display: inline-block;
-        padding: auto;
-        text-align: center;
-        position: relative;
-    }
-    .image-wrapper img {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-    }
-    
-    
-    .image-wrapper:hover .overlay{
-        width: 400px;
-        opacity: 0.7;
-    }
+  .programme p {
+    text-align: left;
+    justify-content: flex-start;
+  }
 
-    .image-wrapper img {
-        width: 400px;
-        height: 300px;
-        display: inline-block;
-    }
+  .programme::after {
+    content: none;
+  }
 
-    .image-wrapper:hover img {
-        opacity: 0.1;
-    }
+  .programme p:nth-child(2) {
+    color: darkgrey;
+  }
 
-    .overlay {
-        width: 400px;
-        height: 300px;
-        background: black;
-        position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.7s ease;
-        opacity: 0;
-        font-size: 2.5rem;
-        flex-wrap: wrap;
+  .dates {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+    border-top: none;
+  }
 
-    }
+  .work {
+    transition: 5s ease-in-out;
+  }
 
-    .overlay-desc {
-        color: white;
-        padding: 25px;
-    } 
+  .work h2,
+  .school h2 {
+    text-align: left;
+  }
 
-    .overlay-desc a {
-        font-size: 15px;
-        background: transparent;
-        color: white;
-        padding: 5px 15px;
-        text-decoration: none;
-        border: double white;
-        display: inline-block;
-        vertical-align: middle;
-        -webkit-transform: perspective(1px) translateZ(0);
-        transform: perspective(1px) translateZ(0);
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        -webkit-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-        -webkit-transition-property: transform;
-        transition-property: transform;
-    }
+  .work-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    /* flex-wrap: wrap; */
+  }
 
-    .overlay-desc a:hover {
-        -webkit-transform: translateX(8px);
-        transform: translateX(8px);
-    }
+  #thoughtworks,
+  #psd,
+  #roboto {
+    display: flex;
+    flex-basis: 200px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 
+  .logo {
+    flex: 1;
+    align-self: center;
+    text-align: center;
+  }
 
+  .desc-p {
+    flex: 3;
+    align-self: center;
+    text-align: justify;
+  }
+
+  .desc-p p:nth-child(1) {
+    text-align: center;
+  }
+
+  .project-row-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 5%;
+  }
+
+  .image-wrapper {
+    display: inline-block;
+    padding: auto;
+    text-align: center;
+    position: relative;
+  }
+  .image-wrapper img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .image-wrapper:hover .overlay {
+    width: 400px;
+    opacity: 0.7;
+  }
+
+  .image-wrapper img {
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+  }
+
+  .image-wrapper:hover img {
+    opacity: 0.1;
+  }
+
+  .overlay {
+    width: 400px;
+    height: 300px;
+    background: black;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s ease;
+    opacity: 0;
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .overlay-desc {
+    color: white;
+    padding: 25px;
+  }
+
+  .overlay-desc a {
+    font-size: 15px;
+    background: transparent;
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+    border: double white;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+
+  .overlay-desc a:hover {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
 }
